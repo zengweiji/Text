@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>投资付款</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<style>
+.Jdialog { background:none;}
+</style>
+
+</head>
+
+<body>
+	<!--头部-->
+    <header class="ld-header"> <span>投资付款</span> <a href="javascript:history.go(-1);" class="goback"></a> </header>
+	<div class="invest-pay-wrap">
+    	<div class="invest-pay">
+        	<ul>
+                <li>
+                    <img class="icon" src="images/invest-pay-0.png" /> 
+                    <p><span class="num"><em>15.00000</em>元</span><span class="tit">可申购金额</span></p>
+                </li>
+            	<li>
+                    <img class="icon" src="images/invest-pay-1.png" /> 
+                    <p><input class="num" type="text" placeholder="0.1元起投"><span class="tit">投资金额</span></p>
+                </li>
+            	<li>
+                    <img class="icon" src="images/invest-pay-2.png" /> 
+                    <p><span class="num">14.60%</span><span class="tit">年化利率</span></p>
+                </li>
+            	<li>
+                    <img class="icon" src="images/invest-pay-3.png" /> 
+                    <p><span class="num"><em>4</em>元</span><span class="tit">预计每日收益</span></p>
+                </li>
+            	<li>
+                    <img class="icon" src="images/invest-pay-4.png" /> 
+                    <p><span class="num"><em>2015-10-20</em><img class="icon-attention" src="images/icon-attention.png"></span><span class="tit">收益发放日期</span></p>
+                </li>
+            </ul>
+        </div>
+        <div class="action"><!--<a class="btn-c" href="#">付款</a>--><a class="btn-d" href="#">付款</a></div>
+        <div class="tips">
+            温馨提示：<br>
+            1、单人单笔最高可投资50万，单人最高总投资额50万；<br>
+            2、享双倍收益时投资一万元每天收益8元，非双倍收益时投资一万每天收益4元；
+        </div>
+    </div>
+    <!--弹出提示-->
+	<div class="Jdialog"><div class="lineBlock Jtip"><p><!--投资金额0.1元及以上--></p></div><b class="lineBlock"></b></div>
+    <script>
+    $(function(){
+		$(".Jdialog").Jtip("投资金额不可大于可申购金额",2000);
+		
+	})
+    </script>
+
+</body>
+</html>

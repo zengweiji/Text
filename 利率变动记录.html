@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠卡脱贫宝</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <script src="js/Header.js"></script> 
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header class="ld-header"><span>利率变动记录</span> <a href="javascript:history.go(-1);" class="left-ctl goback"></a> </header>
+    <div class="cent-box shouyi">
+    	<p>当前年化收益率</p>
+        <span>8.8%</span>
+    </div>
+    <div class="cent-box shouyijilu" id="shouyi">
+    	<div class="shouyijilu-box"><p><span>8.8%</span>2015-12-31</p></div>
+    	<div class="shouyijilu-box"><p><span>8.8%</span>2015-12-30</p></div>
+    	<div class="shouyijilu-box"><p><span>9.8%</span>2015-12-29</p></div>
+    	<div class="shouyijilu-box"><p><span>12.8%</span>2015-12-28</p></div>
+    	<div class="shouyijilu-box"><p><span>9.8%</span>2015-12-27</p></div>
+    	<div class="shouyijilu-box"><p><span>10.8%</span>2015-12-26</p></div>
+    	<div class="shouyijilu-box"><p><span>12.8%</span>2015-12-18</p></div>
+    	<div class="shouyijilu-box"><p><span>9.8%</span>2015-12-17</p></div>
+    	<div class="shouyijilu-box"><p><span>10.8%</span>2015-12-16</p></div>
+    	<div class="shouyijilu-box"><p><span>12.8%</span>2015-12-15</p></div>
+    	<div class="shouyijilu-box"><p><span>9.8%</span>2015-12-13</p></div>
+    	<div class="shouyijilu-box"><p><span>10.8%</span>2015-12-10</p></div>
+    	<div class="shouyijilu-box"><p><span>13.8%</span>2015-12-05</p></div>
+    </div>
+    <script>
+	var en=document.getElementById('shouyi').getElementsByTagName('span');
+	var en_p=document.getElementById('shouyi').getElementsByTagName('p')
+	var en_l=en[en.length-1];
+	var s=en_l.innerHTML.match(/^\d+\.\d/);
+	for(var i=0;i<en.length;i++){
+		w=en[i].innerHTML.match(/^\d+\.\d/)/s
+		en_p[i].style.width=w*100+"%";
+	}
+    </script>
+</body>
+</html>

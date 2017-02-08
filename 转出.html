@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>转出</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/investAssign.css">
+<link rel="stylesheet" href="css/loan.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+<header class="ld-header">
+        <span class="left-ctl">
+            <a href="#" class="goback gobackfromhistory"></a>
+        </span>
+        <span>转出</span>
+
+    </header>
+<section class="topSpace">
+     <div class="rechargeBox">
+          <div class="lbBox recharge" id="recharge"> <a class="lineBlock active" href="javascript:;">转出至银行卡</a> <a class="lineBlock" href="javascript:;">转出至账户余额</a> </div>
+              <div class="profit-tip">
+                	<h3>每30天预计少赚（元）</h3>
+                    <p class="profit-amount">0.00</p>
+              </div>
+     </div>
+     <ul class="recharge_ul show">
+          <div class="contentListBox fontColor2 borderTop">
+               <label class="lbBox">
+               <h3 class="lineBlock">账户余额</h3>
+               <p class="lineBlock">14.56元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">转出金额</h3>
+               <p class="lineBlock">
+                    <input class="lineBlock" type="text" placeholder="请输入转出金额">
+                    元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">银行卡</h3>
+               <p class="lineBlock">6217****587262176217(建设银行)</p>
+               </label>
+          </div>
+
+          <div class="btBox"> <a href="javascript:;">确定转出</a> </div>
+          <div class="remarks">
+               <p class="roll-out-tips">温馨提示：<br>
+                1、请确保余额为100以上，零钱包余额小于100元时，年化收益为8.8%;<br>
+                2、转出至银行卡采取同卡进出原则，银行卡号开户姓名须与实名认证的姓名相同;<br>
+                3、单笔最低可转出100元;<br>
+                4、单笔限额5万，单日限额100万，2小时内到账。
+                </p>
+          </div>
+        
+     </ul>
+     <ul class="recharge_ul">
+          <div class="contentListBox fontColor2 borderTop">
+               <label class="lbBox">
+               <h3 class="lineBlock">账户余额</h3>
+               <p class="lineBlock">14.56元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">转出金额</h3>
+               <p class="lineBlock">
+                    <input class="lineBlock" type="text" placeholder="请输入转出金额">
+                    元</p>
+               </label>
+          </div>
+          <div class="btBox"> <a href="javascript:;">确定转出</a> </div>
+          <div class="remarks">
+          <p class="roll-out-tips">
+            温馨提示：<br>
+            1、请确保余额为100以上，零钱包余额小于100元时，年化收益为8.8%；<br>
+            2、单人单笔最低可转出0.01元；
+          </div>
+     </ul>
+</section>
+<!-- 弹出框 -->
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box">
+          <div class="Jdialog_content">
+               <h3>请先设置交易密码</h3>
+               <label>
+                    <input type="text" placeholder="请输入交易密码">
+                    <span class="remove">×</span> </label>
+          </div>
+          <div class="lbBox Jdialog_submit"> <a class="lineBlock" href="javascript:;">取消</a> <a class="lineBlock" href="javascript:;">确定</a> </div>
+     </div>
+     <b class="lineBlock"></b> </div>
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#recharge").children("a").click(function(){
+        $(this).addClass("active").siblings("a").removeClass("active");
+        var index = $(this).index();
+        $(".recharge_ul").removeClass("show").eq(index).addClass("show");
+    })
+
+    $("#Jdialog").Jdialog({
+        state: 'close',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '请先设置交易密码', //标题文字，可不填，默认页面里的
+        submit: '取消,确定', //按钮文字，逗号隔开，最多两个，可不填，默认html里的
+        cancel: function(){ $("#Jdialog").Jdialog({state:'close'}) }, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+	
+})
+
+</script>
+</html>

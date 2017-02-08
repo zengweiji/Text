@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<script src="js/fastclick.js"></script>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="ld-body">
+    <!--头部-->
+    <header class="ld-header"><span class="left-ctl">
+             <a class="btn-txt lineBlock close-btn" href="#">关闭</a>
+         </span> 
+         <span class="lbBox btn-ctl">
+             <a href="#" class="btn-txt lineBlock">邀请</a>
+         </span><span>脱贫宝</span> 
+   </header>
+    <!--弹出框-->
+    <div class="share-invite">
+        <p><a href="#">分享链接邀请</a></p>
+        <p><a href="#">二维码邀请</a></p>
+    </div>
+    
+
+    <div class="account-wrap">
+          <div class="account-profile unlogin">
+            <div class="account-login"> <img src="images/tuopinError_bg3.png"/> <a class="login btn-a">登录/注册</a> </div>
+          </div>
+    </div>
+    
+    
+    <div class="account-profile">
+        <div class="account-balance">
+            <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-sign lineBlock"></i><em class="myitem-txt lineBlock">签到抽奖</em><span class="arrow_r"></span></p></a>
+            <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-acti lineBlock"></i><em class="myitem-txt lineBlock">活动</em><span class="arrow_r"></span><i class="myitem-tips bg2 lineBlock">1</i></p></a>
+        </div>
+                <!--账户余额-->
+                <div class="account-balance">
+                	<a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-balance lineBlock"></i><em class="myitem-txt lineBlock">账户余额</em><span class="arrow_r"></span></p></a>
+                   
+                    <p class="account-act">
+                        <span><a class="btn-b" href="/InvestPay/Withdraw">提现</a></span>
+                        <span><a class="btn-a" href="/Recharge">充值（转入）</a></span>
+                    </p>
+                    <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-change lineBlock"></i><em class="myitem-txt lineBlock">零钱包</em><span class="arrow_r"></span><i class="myitem-tips lineBlock">利率；8.8%-13.8%</i></p></a>
+
+                	<a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-into lineBlock"></i><em class="myitem-txt lineBlock">脱贫宝</em><span class="arrow_r"></span> </p></a>
+<!--                <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-transfer lineBlock"></i><em class="myitem-txt lineBlock">我的转让</em><span class="arrow_r"></span> </p></a>-->
+                    <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-loan lineBlock"></i><em class="myitem-txt lineBlock">我的借款</em><span class="arrow_r"></span> </p></a>
+                    <a href="#"><p class="account-my-item lbBox"> <i class="account-ico ico-my-more lineBlock"></i><em class="myitem-txt lineBlock">更多</em><span class="arrow_r"></span> </p></a>
+                     
+                </div>
+    </div>
+</div>
+<!--底部导航-->
+<footer>
+    <ul class="lbBox burse-foot">
+        <li class="lineBlock"><a href="/"><i class="bfIcon bg1"></i><p class="bf-t">投资</p></a></li>
+        <li class="lineBlock"><a href="/Wallet/Index"><i class="bfIcon bg3"></i><p class="bf-t">零钱包</p></a></li>
+        <li class="lineBlock"><a href="/loan/Index"><i class="bfIcon bg2"></i><p class="bf-t">借款</p></a></li>
+        <li class="lineBlock active"><a href="/Home/MyAccount"><i class="bfIcon bg4"></i><p class="bf-t">我的</p></a></li>
+    </ul>
+</footer>
+<script>
+$(function(){
+		$('.right-btn').bind('click',function(){$('.share-invite').toggle()});
+	
+	
+})
+</script>
+</body>
+</html>

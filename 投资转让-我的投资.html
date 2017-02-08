@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>投资转让-我的投资</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+<header class="ld-header">
+    <a href="javascript:history.go(-1);" class="goback"></a>
+    <span>我的投资</span>
+</header>
+
+<section class="topSpace">
+    <div class="lbBox doubleLi" id="doubleListNav">
+        <p class="lineBlock wit-t">正在投资</p>
+        <p class="lineBlock wit-t">正在转让</p>
+        <p class="lineBlock wit-t">已转让</p>
+        <span class="wit-arr"></span>
+    </div>
+    <div class="doubleListNav" id="doubleListText">
+        <div class="doubleListBox marginTop active">
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+        </div>
+        <div class="doubleListBox marginTop">
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+        </div>
+        <div class="doubleListBox marginTop">
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524<i class="icon-double">双倍</i></p></h3>
+                    <h3>投资金额:<p class="lineBlock orange">31.00元</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#doubleListNav").children(".wit-t").click(function() {
+        var index = $(this).index();
+        var el = $("#doubleListNav");
+        var sum = 100 / el.children(".wit-t").length;
+        el.children(".wit-arr").css("left", (index * sum) + "%");
+
+        $("#doubleListText").children(".doubleListBox").eq(index).addClass("active").siblings().removeClass("active");
+    });
+})
+</script>
+</html>

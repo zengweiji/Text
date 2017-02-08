@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/loan.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--头部-->
+<header class="ld-header">
+        <span class="left-ctl">
+            <a href="#" class="goback gobackfromhistory"></a>
+        </span>
+
+        <span>提现</span>
+
+</header>
+
+     <section class="pay-tips">
+         <div class="pay-detail takeout">
+          <ul class="pay-list">
+               <li> 账户余额<span class="item-txt">14.56元</span></li>
+
+               <li>可提现金额<span class="item-txt">31.56元</span></li>
+
+               <li> 提现金额<span class="item-txt"><input type="text" placeholder="请输入提现金额" class="amountNum"/>元</span></li>
+
+               <li> 银行卡号<span class="item-txt">6217********5872(建设银行)</span></li>
+
+          </ul>
+          </div>
+          <div class="m-wrap row"> <a href="/"  class="m-btn flex1">申请提现</a> </div>
+          <div class="pay-remind">
+          <p>温馨提示:</p>
+          
+          	<p>1、可提现金额，共计9.56元；
+     		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不可提现金额，共计0.00；</p>
+
+<p>2、提现采取同卡进出原则，银行卡号开户姓名须与实名认证的姓名相同；</p>
+
+<p>3、单笔最低可提现100元；</p>
+
+<p>4、单笔限额5万，单日限额100万，2小时内到账。</p>
+
+          </div>
+     </section>
+
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box">
+          <div class="Jdialog_content">
+               <h3>请先设置交易密码、完成实名认证、绑定银行卡</h3>
+          </div>
+          <div class="lbBox Jdialog_submit"> <a class="lineBlock" href="javascript:;">取消</a> <a class="lineBlock" href="javascript:;">确定</a> </div>
+     </div>
+     <b class="lineBlock"></b>
+</div>
+</body>
+<script type="text/javascript">
+$(function(){
+
+    $("#Jdialog").Jdialog({
+        state: 'close',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '请先设置交易密码、完成实名认证、绑定银行卡', //标题文字，可不填，默认页面里的
+        submit: '取消,确定', //按钮文字，逗号隔开，最多两个，可不填，默认html里的
+        cancel: function(){}, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+})
+</script>
+</html>

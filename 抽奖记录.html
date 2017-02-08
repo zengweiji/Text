@@ -1,0 +1,92 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>资金记录</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myAccount.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+
+
+<div> 
+     <!--头部-->
+     <header class="ld-header"><span>抽奖记录</span> <a href="javascript:history.go(-1);" class="left-ctl goback"></a> </header>
+
+    <div class="lbBox flow-top">
+        <div class="lineBlock flt-text">
+            <p class="fltt-t1">剩余抽奖（次）</p>
+            <p class="fltt-t2">25000.00</p>
+        </div>
+        <span class="lineBlock flt-arr"></span>
+        <div class="lineBlock flt-text">
+            <p class="fltt-t1">已抽奖（次）</p>
+            <p class="fltt-t2">100.00</p>
+        </div>
+    </div>
+
+     <div class="flow-wrap" id="mList">
+          <div class="flow-date-tit">2015年09月</div>
+          <div class="flow-list lottery">
+               <ul>
+                   <li> <img class="icon" src="images/rd-unlottery.png"/>
+                         <div class="flow-item">
+                         	  <i class="item-yeartime">2015-09-10</i>
+                              <p>剩余<em class="energy-text">60</em>天</p>
+                              <p><span class="status">首次充值100元以上获得</span></p>
+                         </div>
+                    </li>
+                   <li> <img class="icon" src="images/rd-lotteryed.png"/>
+                         <div class="flow-item">
+                         	  <i class="item-yeartime">2015-09-10</i>
+                              <p>剩余<em class="energy-text">59</em>天</p>
+                              <p><span class="status">首次充值100元以上获得</span></p>
+                         </div>
+                   </li>
+                   <li> <img class="icon" src="images/rd-lotteryps.png"/>
+                         <div class="flow-item">
+                         	  <i class="item-yeartime">2015-09-10</i>
+                                 <p>剩余<em class="energy-text">0</em>天</p>
+                              <p><span class="status">当月（自然月）累计签到20天获得</span></p>
+                         </div>
+                   </li>
+                    <li> <img class="icon" src="images/rd-lotteryps.png"/>
+                         <div class="flow-item">
+                         	 	 <i class="item-yeartime">2015-09-10</i>
+                                 <p><em class="energy-text">+0.12</em>天</p>
+                              	 <p><span class="status">当月（自然月）累计签到20天获得</span></p>
+                         </div>
+                    </li>
+                   
+               </ul>
+          </div>
+          <div class="flow-date-tit">2015年08月</div>
+          <div class="flow-list lottery">
+               <ul>
+                   <li> <img class="icon" src="images/rd-lotteryed.png"/>
+                         <div class="flow-item">
+                         	 	 <i class="item-yeartime">2015-09-10</i>
+                                 <p><em class="energy-text">+0.12</em>天</p>
+                              	 <p><span class="status">当月（自然月）累计签到20天获得</span></p>
+                         </div>
+                   </li>
+               </ul>
+          </div>
+
+     </div>
+     
+     <div class="loadingDiv">
+            <p>加载更多...</p>
+            <p>正在加载...</p>
+            <p>暂无数据...</p>
+     </div>
+     
+</div>
+
+
+</body>
+</html>

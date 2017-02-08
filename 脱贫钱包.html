@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>零钱包</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/jquery.percentageloader-0.1.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <header class="ld-header burseTop">
+        <span>脱贫宝</span>
+        <div class="lbBox bt-right">
+            <a class="lineBlock bt-t" href="javascript:;">设置</a>
+            <span class="lineBlock bt-arr"></span>
+            <a class="lineBlock bt-t" href="javascript:;">问题</a>
+        </div>
+    </header>
+    <div class="burse-head">
+        <div class="bh-plan">
+            <!--<canvas class="bhp-canvas" id="foo"></canvas>-->
+            <div class="bhp-canvas" id="foo"></div>
+            <div class="bhp-earnings">
+                <p class="bhpe-t1">当前年化收益率</p>
+                <p class="bhpe-t2" id="fooText">8.8</p>
+                <img class="bhpe-img" src="images/burse_icon1.png" alt=""/>
+                <p class="bhpe-t3">爆表啦!</p>
+            </div>
+            <p class="bhp-t">还有2天利率即上涨0.5%；<a class="bhp-ta" href="javascript:;">利率变动记录>></a></p>
+            <p class="bhp-t">零钱包余额满100元，每周利率上涨0.5%，最高13.8%</p>
+        </div>
+        <div class="bh-leafingImg"><a href="javascript:;"><img src="images/leafImg.png" alt=""></a></div>
+    </div>
+    <section class="burse-content">
+        <div class="bc-tomo">
+            <div class="lbBox bct-btbox">
+                <a class="lineBlock bctb-bt" href="javascript:;">转出</a>
+                <a class="lineBlock bctb-bt" href="javascript:;">转入</a>
+            </div>
+            <p class="bct-t1">预计明日收益（元）<i class="burseIcon" id="burseTip"></i></p>
+            <p class="bct-t2">1.10</p>
+        </div>
+        <div class="lbBox bc-sum">
+            <a class="lineBlock bcs-tbox" href="javascript:;">
+                <p class="bcst-t1">零钱包余额（元）</p>
+                <h3 class="bcst-t2">31.00</h3>
+            </a>
+            <a class="lineBlock bcs-tbox" href="javascript:;">
+                <p class="bcst-t1">体验金（元）</p>
+                <h3 class="bcst-t2">59.56</h3>
+            </a>
+            <a class="lineBlock bcs-tbox" href="javascript:;">
+                <p class="bcst-t1">零钱包余额（元）</p>
+                <h3 class="bcst-t2">31.00</h3>
+            </a>
+            <a class="lineBlock bcs-tbox" href="javascript:;">
+                <p class="bcst-t3"><img src="images/counter.png" alt="">累计收益（元）</p>
+            </a>
+        </div>
+        <div class="bc-secure">
+            <div class="bcs-tbox">
+                <img class="bcst-icon" src="images/burse_icon3.png" alt=""/>
+                <ul class="bcst-li">
+                    <li class="lbBox">
+                        <i class="lineBlock burseIcon bg1"></i>
+                        <p class="lineBlock bcstl-t">集团5亿注册资金本息保障</p>
+                    </li>
+                    <li class="lbBox">
+                        <i class="lineBlock burseIcon bg2"></i>
+                        <p class="lineBlock bcstl-t">阳光保险提供交易损失保险</p>
+                    </li>
+                    <li class="lbBox">
+                        <i class="lineBlock burseIcon bg3"></i>
+                        <p class="lineBlock bcstl-t">建设银行2000万风险预备金专设账户</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bc-slider">
+            <p class="bcsl-t">投资<span class="bcslt-s">100.00</span>元，30天最多可赚<span class="bcslt-s">1.13</span>元</p>
+            <div class="bcsl-slip" id="investSlider">
+                <div class="lbBox bcsls-line">
+                    <div class="lineBlock bcslsl-dbox active"><span class="bcslsl-dot"></span></div>
+                    <div class="lineBlock bcslsl-dbox"><span class="bcslsl-dot"></span></div>
+                    <div class="lineBlock bcslsl-dbox"><span class="bcslsl-dot"></span></div>
+                    <div class="lineBlock bcslsl-dbox"><span class="bcslsl-dot"></span></div>
+                    <div class="lineBlock bcslsl-dbox"><span class="bcslsl-dot"></span></div>
+                </div>
+                <img class="bcsls-img" src="images/burse_icon4.png" alt=""/>
+            </div>
+        </div>
+        <div class="bc-change">
+            <img class="bcc-img" src="images/burse_bg1.jpg" alt=""/>
+            <!--<p class="bcc-num">1134</p>-->
+        </div>
+    </section>
+    <footer>
+        <ul class="lbBox burse-foot">
+            <li class="lineBlock active"><a href="javascript:;"><i class="bfIcon bg1"></i><p class="bf-t">投资</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg3"></i><p class="bf-t">零钱包</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg2"></i><p class="bf-t">借款</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg4"></i><p class="bf-t">我的</p></a></li>
+        </ul>
+    </footer>
+    <!-- 提示框 -->
+    <div class="Jdialog tip style2">
+        <div class="lineBlock Jtip">
+            <p>零钱包收益自动累积至账户余额</p>
+        </div>
+        <b class="lineBlock"></b>
+    </div>
+</body>
+<script type="text/javascript">
+var burseAction = {
+    init: function(){
+        this.burseYield("foo","fooText",100, 88, 8.8);
+        this.burseSlider();
+        this.leafingScroll();
+    },
+    /*
+    *   投资率仪表盘
+    *   imgNum = 仪表盘canva的ID
+    *   textNum = 仪表盘数值元素的ID
+    *   maxNum = 仪表盘最大数值
+    *   setNum = 仪表盘设置数值
+    *   scrollNum = 滚动数字的值
+    */
+    burseYield: function(imgNum, textNum, maxNum, setNum, scrollNum){
+        /*var opts = {
+            lines: 12,
+            angle: 0.20,
+            lineWidth: 0.06,
+            pointer: {
+                length: 0.9,
+                strokeWidth: 0.029,
+                color: '#000000'
+            },
+            limitMax: 'false',
+            colorStart: '#b9f53a',
+            colorStop: '#b9f53a',
+            strokeColor: '#28a033',
+            generateGradient: true
+        };
+        var target = document.getElementById(imgNum);
+        var gauge = new Donut(target).setOptions(opts);
+        // gauge.setTextField(document.getElementById("fooText"));
+        if (setNum >= maxNum) {
+            $("#"+textNum).parent().addClass("burst");
+        }
+        gauge.maxValue = maxNum || 100;
+        gauge.animationSpeed = 32;
+        gauge.set(setNum > maxNum ? maxNum : setNum);*/
+        var $topLoader = $("#"+imgNum).percentageLoader({
+            width: $(window).width() * 0.521875,
+            height: $(window).width() * 0.521875,
+            controllable : false,
+            onProgressUpdate : function(val) {
+                $topLoader.setValue(Math.round(val * 100.0));
+            }
+        });
+        var kb = 0;
+        var totalKb = maxNum || 100;
+        var endNum = setNum || 88;
+        var animateFunc = function() {
+            kb += 2;
+            $topLoader.setProgress(kb / totalKb);
+            $topLoader.setValue(kb.toString() + 'kb');
+            if (kb < endNum) {
+                setTimeout(animateFunc, 2000/endNum);
+            }
+        }
+        setTimeout(animateFunc, 32);
+        //数字滚动效果
+        var decimal_places = 1;
+        var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 10;
+        $("#"+textNum).animateNumber({
+            number: scrollNum * decimal_factor,
+            numberStep: function(now, tween) {
+                var floored_number = Math.floor(now) / decimal_factor,
+                        target = $(tween.elem);
+                if (decimal_places > 0) {
+                    floored_number = floored_number.toFixed(decimal_places);
+                }
+                target.text(floored_number + '%');
+            }
+        }, 1500)
+    },
+    //投资滑块
+    burseSlider: function(){
+        var simg = $("#investSlider").children(".bcsls-img");
+        var sDot = $("#investSlider").children(".bcsls-line").children(".bcslsl-dbox");
+        var array = new Array();
+        for (var i = 0; i < sDot.length; i ++) {
+            array.push(sDot.eq(i).offset().left);
+        }
+
+        var array2 = ['0.22rem', '1.38rem', '2.54rem', '3.70rem', '4.86rem'];
+//        var array2 = new Array();
+//        var lengthTemp = (simg.width() / 2) + $("#investSlider").offset().left - (sDot.eq(1).children(".bcslsl-dot").width() / 2);
+//        array2.push("0.22rem");
+//        for (var i = 1; i < sDot.length; i++) {
+//            array2.push(sDot.children(".bcslsl-dot").eq(i).offset().left - lengthTemp);
+//        }
+
+        var tLeft = simg.position().left + (simg.width()/2);
+        var tLast = sDot.last().children(".bcslsl-dot").offset().left - sDot.parents(".bcsls-line").offset().left;
+        simg.on({
+            'touchstart': function(e){
+                simg.on('touchmove',function(em){
+                    em = window.event;
+                    var tMove = em.targetTouches[0].pageX - tLeft;
+                    if (tMove < 0) {
+                        tMove = 0;
+                    }
+                    if (tMove > tLast) {
+                        tMove = tLast;
+                    }
+                    /*simg.css({
+                     "-webkit-transform": "translateX(" + tMove + "px)",
+                     "transform": "translateX(" + tMove + "px)"
+                     });*/
+                    simg.css({
+                        "left": tMove
+                    });
+                })
+            },
+            'touchend': function(ee){
+                simg.off("touchmove");
+                ee = window.event;
+                var tEnd = ee.changedTouches[0].pageX;
+                for (var i = 0; i < array.length; i ++){
+                    if (tEnd <= array[0]) {
+                        chooseDot(0);
+                        break;
+                    }
+                    if (tEnd >= array[i]) {
+                        chooseDot(i)
+                    }
+                }
+            }
+        });
+        sDot.click(function(){
+            var index = $(this).index();
+            chooseDot(index);
+        });
+
+        function chooseDot(index){
+            sDot.removeClass("active").eq(index).addClass("active");
+            /*simg.css({
+             "-webkit-transform": "translateX(" + array2[index] + ")",
+             "transform": "translateX(" + array2[index] + ")"
+             });*/
+            simg.css({
+                "left": array2[index]
+            });
+        }
+    },
+    //右侧牛头随着滚动缩放
+    leafingScroll: function(){
+        var el = $(".bh-leafingImg");
+        el.css("transform-origin", "right center");
+        $(window).scroll(function(){
+            var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            var num = $(document.body).height() - $(window).height();
+            el.css("transform", "scale("+(1-(scrollTop/num))+")");
+        });
+    }
+}
+$(function(){
+
+    burseAction.init();
+
+    //提示弹框
+    $("#burseTip").click(function(){
+        $(".Jdialog").Jtip("零钱包收益自动累积至账户余额",1500);//提示层
+    });
+
+})
+</script>
+</html>

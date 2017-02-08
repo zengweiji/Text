@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分享链接H5</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+</head>
+<body>
+
+    <!--头部-->
+    <header class="ld-header">
+        <span>脱贫宝</span>
+    </header>
+
+    <div class="swiper-container shareLink">
+        <div class="swiper-wrapper">
+            <section class="swiper-slide">
+                <img src="images/shareLink_bg1.jpg">
+            </section>
+            <section class="swiper-slide">
+                <img src="images/shareLink_bg2.jpg">
+            </section>
+            <section class="swiper-slide">
+                <img src="images/shareLink_bg3.jpg">
+            </section>
+        </div>
+
+        <div class="downContent">
+            <img id="downImg" class="down_img" src="images/shareLink_icon.png" class="resize">
+            <a class="down_link" href="javascript:;">立即注册</a>
+        </div>
+    </div>
+
+</body>
+<script>
+    var downImg = document.getElementById("downImg");
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction : 'vertical',
+        mousewheelControl : true,
+        onSlideChangeEnd: function(swiper){
+            if (swiper.activeIndex == (swiper.slides.length - 1)) {
+                downImg.className = "down_img rotate";
+            }else{
+                downImg.className = "down_img";
+            }
+        }
+    });
+    downImg.addEventListener("click", function(){
+        if (mySwiper.activeIndex == (mySwiper.slides.length - 1)) {
+            mySwiper.slidePrev();
+        }else{
+            mySwiper.slideNext();
+        }
+    });
+</script>
+</html>

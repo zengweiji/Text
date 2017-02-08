@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/loan.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script> 
+<script src="js/public.js"></script>
+</head>
+<body >
+<!--头部-->
+<header class="ld-header"> <span>申请借款</span> </header>
+
+     <section class="tpb-intro">
+          <div class="intro-item">
+               <h2 class="item-tit">借款流程</h2>
+          <ul class="loan-process lbBox">
+               <li class="lineBlock"><span class="sq-ico lineBlock"></span><i>在线申请</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="sh-ico lineBlock"></span><i>资质审核</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="fk-ico lineBlock"></span><i>在线放款</i></li>               
+          </ul>
+          </div>
+          <div class="loan-remind"> 姓名和身份证信息与实名认证同步，请务必如实填写提交后不可自行更改。 </div>
+          <div class="loan-fill">
+               <ul class="fill-form">
+                    <li>
+                         <input class="ipt-user" type="text" placeholder="请输入真实姓名">
+                    </li>
+                    <li>
+                         <input class="ipt-id" type="text" placeholder="请输入您的二代身份证号">
+                    </li>
+                    <li>
+                         <input class="ipt-money" type="text" placeholder="请输入您的借款金额">
+                    </li>
+                    <li class="deadline-hd">
+    
+                             <i>请选择借款期限</i>
+                             <span class="control-wd"><i class="arrow_rt"></i></span>
+                     </li>
+               </ul>
+             <div id="deadline" style="display:none;">  
+               <ul class="time-list">       
+            	<li ><label>1个月</label></li>
+                <li><label>2个月</label></li>
+                <li><label>3个月</label></li>
+                <li><label>4个月</label></li>
+                <li><label>5个月</label></li>
+                <li><label>24个月</label></li>
+           		 </ul>
+             </div>    
+          </div>
+        
+          <div class="m-wrap"><button class="m-btn" type="button">立即申请借款</button></div>
+            <div class="pay-pp">
+          		<p class="loan-agreement">点击提交申请即表示您同意<a href="javascript:;" class="blue-pay">《脱贫宝借款协议》</a></p>
+    	  </div>
+     </section>
+
+<!-- 提示框 -->
+<div class="Jdialog tip">
+    <div class="lineBlock Jtip">
+        <p>您的借款申请已提交，等待审核！</p>
+    </div>
+    <b class="lineBlock"></b>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('.deadline-hd').click(function(){
+			$('.control-wd').toggleClass('arrowup');
+			  $("#deadline").toggle();
+		});//期限选择菜单下拉显示隐藏		
+		$('#deadline').find('li').each(function () {
+           $(this).click (function(){
+			   label_str = $(this).find('label').html(); 
+			   var  limitTime=$('.deadline-hd >i') 
+			   $('.deadline-hd >i').html(label_str);
+			   $('.deadline-hd >i').addClass('color-g9');
+			   $("#deadline").hide();
+			   $('.control-wd').toggleClass('arrowup');
+		   })
+        });//期限选择菜单下拉显选中
+		
+
+        $(".Jdialog").Jtip("您的借款申请已提交，等待审核！",1500);//提示层
+	})
+</script>
+</body>
+</html>

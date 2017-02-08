@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>用户反馈</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+
+<body>
+	<!--头部-->
+<header class="ld-header">
+        <span class="left-ctl">
+            <a href="#" class="goback gobackfromhistory"></a>
+        </span>
+        <span class="lbBox btn-ctl">
+            <a href="/" class="gohome"></a>
+        </span>
+        <span>用户反馈</span>
+</header>
+	<div class="feedback-wrap">
+    
+    	<div class="textarea-box">
+            <textarea class="textarea" placeholder="您有任何意见或投诉，请说明情况及时反馈，十分感谢！"></textarea>
+            <div class="limit-num"><em>0</em>/200</div>
+        </div>
+        <div class="btn"><input class="btn-c" type="submit" value="提交"></div>
+    	
+    </div>
+        <div class="pay-remind">
+            <p>温馨提示：<br>
+如有相关问题可咨询PC端在线客服，网址:www.8tpb.com.</p>
+        </div>
+        
+    <script>
+    $(function(){
+		$('.textarea').bind('input',function(){
+			$('.limit-num em').html($(this).val().length)
+		
+		})
+		
+	})
+    </script>
+</body>
+</html>

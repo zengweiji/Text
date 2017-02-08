@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠卡脱贫宝</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.16.1.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.custom-2.16.1.min.js"></script>
+    <script type="text/javascript" src="js/cityData.js"></script>
+    
+</head>
+<body>
+    <!--头部-->
+ <header class="ld-header">
+            <span class="left-ctl">
+                <a href="#" class="goback gobackfromhistory"></a>
+            </span>
+            <span class="lbBox btn-ctl">
+                <a href="/" class="gohome"></a>
+            </span>
+            <span>银行卡认证详情</span>
+    
+</header>
+    <section>
+        <div class="reg-form">
+
+            <ul class="fill-form">
+                <li>
+                    <input class="imp2" type="text" value="周*" readonly="readonly">
+                    <span class="nm-a1">持&nbsp;卡&nbsp;人</span>
+                </li>
+                <li>
+                    <input id="cd-bank" class="imp4" type="text" placeholder="请输入正确的身份证号" value="4309**********1789">
+                    <span class="nm-a1">身份证号</span>
+                </li>
+                <li>
+                    <input id="cd-bank" class="imp4" type="text" placeholder="请输入正确的银行卡号" value="6228***********9919">
+                    <span class="nm-a1">银行卡号</span>
+                </li>
+                <li>
+                    <input class="imp2 c-id" type="text" value="农业银行" readonly="readonly">
+                    <span class="nm-a1">开户银行</span>
+                </li>
+                <li>
+                    <input class="imp2" type="text" placeholder="请输入正确的开户支行" value="深圳支行">
+                    <span class="nm-a1">开户支行</span>
+                </li>
+               <li>
+                <span class="nm-a1">所属城市： </span>
+                <span class="userfill-wrap">安徽省-合肥市</span>
+       			</li>
+                <li>
+                    <input id="cd-bank" class="imp4" type="text" placeholder="请输入银行卡预留手机号" value="135****5555">
+                    <span class="nm-a1">手机号码</span>
+                </li>
+         
+            </ul>
+            <div class="fill-hint">
+                <p class="fh-t">温馨提示：</p>
+                <p class="fh-t">如需帮助请联系客服，电话：<span class="fh-t2">400-035-8888</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            $("#cd-bank").click(function () {
+                $(".wap_box").css("display", "block");
+                $(".overlayer2").show();
+            })
+            /*遮罩层点击时*/
+            $('.overlayer2').click(function () {
+                $('.overlayer2').hide();
+            });
+            $(".wap_box").click(function () {
+                $('.overlayer2').hide();
+            })
+            /*页面加载添加遮罩层*/
+            $("<div class='overlayer'></div><div class='overlayer2'></div>").appendTo($('body'));
+
+
+        //    // 选择省市区
+            //    $('#inputb').click(function() {
+            //        $('.footer').show();
+            //    });
+            //
+            //    $('.sel_city_footl').click(function() {
+            //        $('.footer').hide();
+            //    });
+            //    $('.sel_city_footr').click(function() {
+            //        $('.footer').hide();
+            //        // alert($(".xz").text());
+            //        $('#inputb').val($(".xz li").text());
+            //        $('#inputb').css({color: '#000'});
+            //    });
+            var cityLinkage = {
+                cityDataAttr: {},
+                init: function () {
+                    this.loadCityData();
+                },
+                loadCityData: function () {
+                    this.cityDataAttr = getCityData();
+                    this.insertCityData();
+                },
+                insertCityData: function () {
+                    var city = this;
+                    var data = city.cityDataAttr.data;
+                    if (data) {
+                        var liTemp = listTree2(data);
+                        //console.log(liTemp);
+                        if ($("#cityList").length <= 0) {
+                            $("#inputb").after("<div id='cityList' value='省 / 市 / 区'></div>");
+                        }
+                        $("#cityList").empty().append(liTemp);
+
+                        $('#cityList').mobiscroll().treelist({
+                            title: '',
+                            theme: 'mobiscroll',
+                            lang: 'zh',
+                            display: 'bottom',
+                            id: "abcc",
+                            placeholder: '省 / 市 / 区',
+                            labels: ['省', '市', '区'],
+                            onSelect: function (valueText, inst) {
+                                $("#inputb").val(valueText);
+                            }
+                        });
+
+                        $("#inputb").click(function () {
+                            $("#cityList").mobiscroll("show");
+                            return false;
+                        });
+                    }
+                    //递归添加数据
+                    function listTree(dataTemp) {
+                        var temp = "";
+                        $.each(dataTemp, function (i, item) {
+                            temp += "<li data-val='" + item.name + "'>" + item.name;
+                            if (item.children) {
+                                var temp2 = "<ul>";
+                                temp2 += listTree(item.children);
+                                temp2 += "</ul>";
+                                temp += temp2;
+                            }
+                            temp += "</li>";
+                        });
+                        return temp;
+                    }
+                    function listTree2(dataTemp) {
+                        var temp = "";
+                        $.each(dataTemp, function (i, item) {
+                            temp += "<li data-val='" + item.name + "'>" + item.name;
+                            var temp2 = "<ul>";
+                            $.each(item.children, function (n, item2) {
+                                temp2 += "<li data-val='" + item2.name + "'>" + item2.name + "</li>";
+                            });
+                            temp2 += "</ul>";
+                            temp += temp2;
+                            temp += "</li>";
+                        });
+                        return temp;
+                    }
+                }
+            }
+            cityLinkage.init();
+        })
+    </script>
+</body>
+</html>

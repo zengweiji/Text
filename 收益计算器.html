@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>收益计算器</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/mobiscroll.custom-2.16.1.min.css">
+<link rel="stylesheet" href="css/investAssign.css">
+<link rel="stylesheet" href="css/loan.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/mobiscroll.custom-2.16.1.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+<header class="ld-header">
+        <span class="left-ctl">
+            <a href="#" class="goback gobackfromhistory"></a>
+        </span>
+        <span>收益计算器</span>
+</header>
+<section class="topSpace">
+     <div class="rechargeBox">
+          <div class="lbBox recharge" id="recharge"> <a class="lineBlock active" href="javascript:;">零钱包收益计算器</a> <a class="lineBlock" href="javascript:;">脱贫宝收益计算器</a> </div>
+     </div>
+     <div class="recharge_ul show">
+          <div class="contentListBox fontColor2 borderTop">
+               <label class="rel">
+                    <h3 class="lineBlock">年华收益率</h3>
+                    <p class="pay-amount-w"><span class="float_r">%</span><input class="float_r" type="text" placeholder="8.80"></p>
+               </label>
+               <label class="rel dating">
+                    <h3 class="lineBlock">利率下次上涨日期</h3>
+                    <p class="lbBox pay-amount-w">
+                        <!--<span class="float_r"><img class="dating-icon" src="images/dating.png" alt=""></span>-->
+                        <input id="dating" class="lineBlock" type="text" placeholder="2015-12-30">
+                        <img class="lineBlock dating-icon" src="images/dating.png" alt="">
+                    </p>
+               </label>
+               <label class="lbBox">
+                    <h3 class="lineBlock">计息方式</h3>
+                    <p class="lineBlock">隔日计息</p>
+               </label>
+               <label class="rel">
+                    <h3 class="lineBlock">投资金额</h3>
+                    <p class="pay-amount-w"><span class="float_r">元</span><input class="float_r" type="text" placeholder="请输入预计投资金额"></p>
+               </label>
+          </div>
+          <div class="btBox"> <a href="javascript:;">开始计算</a> </div>
+          <div class="remarks">
+               <p>计算结果：</p>
+          </div>
+          <div class="contentListBox fontColor2 borderTop">
+               <label class="lbBox">
+                    <h3 class="lineBlock">明日收益</h3>
+                    <p class="lineBlock">4元</p>
+               </label>
+               <label class="lbBox">
+                    <h3 class="lineBlock">30天收益</h3>
+                    <p class="lineBlock">120元</p>
+               </label>
+               <label class="lbBox">
+                    <h3 class="lineBlock">一年收益</h3>
+                    <p class="lineBlock">1460元</p>
+               </label>
+          </div>
+     </div>
+     <div class="recharge_ul">
+         <div class="contentListBox fontColor2 borderTop">
+             <label class="rel">
+                 <h3 class="lineBlock">年华收益率</h3>
+                 <p class="pay-amount-w"><span class="float_r">%</span><input class="float_r" type="text" value="14.60"></p>
+             </label>
+             <label class="rel dating">
+                 <h3 class="lineBlock">享双倍收益</h3>
+                 <div class="psllt-switch open" id="purseSwitch"><i></i></div>
+             </label>
+             <label class="lbBox">
+                 <h3 class="lineBlock">计息方式</h3>
+                 <p class="lineBlock">隔日计息</p>
+             </label>
+             <label class="rel">
+                 <h3 class="lineBlock">投资金额</h3>
+                 <p class="pay-amount-w"><span class="float_r">元</span><input class="float_r" type="text" placeholder="请输入预计投资金额"></p>
+             </label>
+         </div>
+         <div class="btBox"> <a href="javascript:;">开始计算</a> </div>
+         <div class="remarks">
+             <p>计算结果：</p>
+         </div>
+         <div class="contentListBox fontColor2 borderTop">
+             <label class="lbBox">
+                 <h3 class="lineBlock">明日收益</h3>
+                 <p class="lineBlock">4元</p>
+             </label>
+             <label class="lbBox">
+                 <h3 class="lineBlock">30天收益</h3>
+                 <p class="lineBlock">120元</p>
+             </label>
+             <label class="lbBox">
+                 <h3 class="lineBlock">一年收益</h3>
+                 <p class="lineBlock">1460元</p>
+             </label>
+         </div>
+     </div>
+</section>
+<!-- 弹出框 -->
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box">
+          <div class="Jdialog_content">
+               <h3>请先设置交易密码</h3>
+               <label>
+                    <input type="text" placeholder="请输入交易密码">
+                    <span class="remove">×</span> </label>
+          </div>
+          <div class="lbBox Jdialog_submit"> <a class="lineBlock" href="javascript:;">取消</a> <a class="lineBlock" href="javascript:;">确定</a> </div>
+     </div>
+     <b class="lineBlock"></b> </div>
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#recharge").children("a").click(function(){
+        $(this).addClass("active").siblings("a").removeClass("active");
+        var index = $(this).index();
+        $(".recharge_ul").removeClass("show").eq(index).addClass("show");
+    })
+
+     $("#purseSwitch").click(function(){
+        if (!$(this).hasClass("open")) {
+             $(this).addClass("open");
+             $("#purseSwitchText, #purseSwitchBt").show();
+        }else{
+             $(this).removeClass("open");
+             $("#purseSwitchText, #purseSwitchBt").hide();
+        }
+     });
+
+    $("#Jdialog").Jdialog({
+        state: 'close',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '确认操作', //标题文字，可不填，默认页面里的
+        submit: '取消,确定', //按钮文字，逗号隔开，最多两个，可不填，默认html里的
+        cancel: function(){ $("#Jdialog").Jdialog({state:'close'}) }, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+	
+	$('#js-bankInfo').click(function(){
+			  $(".bank-info").fadeToggle();
+	});//银行限额列表
+
+     $('#dating').mobiscroll().date({
+          theme: 'mobiscroll',
+          lang: 'zh',
+          display: 'bottom',
+          dateFormat: 'yyyy-mm-dd',
+          default: new Date(),
+          minDate: new Date(2014, 8, 15),
+          maxDate: new Date(2024, 8, 14)
+     });
+})
+
+</script>
+</html>

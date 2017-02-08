@@ -1,0 +1,238 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>资金记录</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myAccount.css" rel="stylesheet" type="text/css">
+<link href="css/scroll.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<script src="js/iscroll.js"></script>
+<script type="text/javascript">
+    var myScroll,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+function pullUpAction () {
+//前台插入数据模拟	
+	setTimeout(function () {		
+$('#mList').append('<div class="flow-date-tit">2015年9月</div><div class="flow-list"><ul><li> <img class="icon" src="images/recharge.png"/><div class="flow-item"><p><span class="num">+<em>0.01</em>元</span><span class="tit">系统充值</span></p><p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p></div></li></ul></div>')	
+		myScroll.refresh();	// 数据加载完成后，调用界面更新方法 
+	}, 500);	
+}
+/* //ajax后台交互
+	var page = i++; 
+        Ajax(page); 	
+function Ajax(page) { 
+    $.ajax({
+        type: "post",
+        dataType: "JSON",
+        url: "/youPage",
+        // 你请求的地址
+        data: {
+            'page': page 
+        },
+        success: function (data) {
+            data = eval(data.clientList);
+            if (data.length) { 
+                //加载数据。。。
+            } else {
+                $('.pullUpLabel').html('亲，没有更多内容了！');
+            }
+        },
+        error: function () {
+
+        }
+    });
+}*/
+<!--初始化iScroll控件-->
+function loaded() {
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: false,
+		onRefresh: function () {
+			 if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+			}
+		},
+		onScrollMove: function () {
+
+			 if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			
+	    if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+				pullUpAction();	// 执行ajax回调
+			}
+		}
+	});
+	
+}
+
+//初始化绑定iScroll控件 
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false); 
+</script>
+</head>
+<body>
+
+<!--弹出菜单-->
+<div class="flow-filter-menu">
+  <ul>
+      <li><a href="#">全部</a></li>
+      <li><a href="#">充值</a></li>
+      <li><a href="#">提现</a></li>
+      <li><a href="#">转入</a></li>
+      <li><a href="#">转出</a></li>
+      <li><a href="#">投资</a></li>
+      <li><a href="#">转让</a></li>
+      <li><a href="#">收益</a></li>
+      <li><a href="#">批扣</a></li>
+  </ul>
+</div>
+
+<div id="wrapper">
+<div> 
+     <!--头部-->
+     <header class="ld-header"><a href="#" class="right-btn">筛选</a><span>资金记录</span> <a href="javascript:history.go(-1);" class="left-ctl goback"></a> </header>
+
+     <div class="flow-wrap" id="mList">
+          <div class="flow-date-tit">2015年9月</div>
+          <div class="flow-list">
+               <ul>
+                    <li> <img class="icon" src="images/walletIcon-01.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>500</em>元</span><span class="tit">注册赠送体验金</span></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-02.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">-<em>500</em>元</span><span class="tit">结束注册体验金</span></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-03.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>0.01</em>元</span><span class="tit">银行卡转入</span></p>
+                              <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-04.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">-<em>5.00</em>元</span><span class="tit">投资</span><i class="icon-double">双倍</i></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-05.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>100.00</em>元</span><span class="tit">账户余额转入</span></p>
+                              <p><span class="status checking">处理中</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-06.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">-<em>100</em>元</span><span class="tit">转出到账户余额</span></p>
+                              <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-07.png"/>
+                       <div class="flow-item">
+                           <p><span class="num">-<em>0.01</em>元</span><span class="tit">转出到银行卡</span></p>
+                           <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                       </div>
+                    </li>
+                    <li> <img class="icon" src="images/walletIcon-03.png"/>
+                       <div class="flow-item">
+                           <p><span class="num">+<em>5.00</em>元</span><span class="tit">银行卡转入</span></p>
+                           <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                       </div>
+                    </li>
+                    <li> <img class="icon" src="images/capitalIcon-03.png"/>
+                       <div class="flow-item">
+                           <p><span class="num">+<em>100</em>元</span><span class="tit">抽奖收益</span></p>
+                           <p><span class="status success">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                       </div>
+                    </li>
+                    <li> <img class="icon" src="images/capitalIcon-04.png"/>
+                       <div class="flow-item">
+                           <p><span class="num">+<em>100</em>元</span><span class="tit">零钱包余额转入</span></p>
+                           <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                       </div>
+                    </li>
+                    <li> <img class="icon" src="images/daily-earnings.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>100</em>元</span><span class="tit">每日收益</span></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/huimi-import.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">-<em>100</em>元</span><span class="tit">转出到零钱包余额</span></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/capitalIcon-05.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>100</em>元</span><span class="tit">惠米余额转入</span></p>
+                              <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+                    <li> <img class="icon" src="images/discount.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">-<em>100</em>元</span><span class="tit">批扣</span></p>
+                              <p><span class="status failed">失败</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+          <div class="flow-date-tit">2015年9月</div>
+          <div class="flow-list">
+               <ul>
+                    <li> <img class="icon" src="images/recharge.png"/>
+                         <div class="flow-item">
+                              <p><span class="num">+<em>0.01</em>元</span><span class="tit">系统充值</span></p>
+                              <p><span class="status success">成功</span><span class="flow-date">2015-09-10 <em class="flow-time">15:38:08</em></span></p>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+
+     </div>
+           <!-- 向上拉加载更多-->
+          <div class="ld-more" id="pullUp"> <span class="pullUpIcon lineBlock"></span><span class="pullUpLabel lineBlock">继续上拉加载更多...</span>
+          </div>
+</div>
+</div>
+<script>
+$(function(){
+	$('body').append("<div class='overlayer'></div>");
+	$('.ld-header .right-btn').bind('touchend',function(){
+		$('.flow-filter-menu').show();
+		$('.overlayer').show();
+	});
+	
+	$('.overlayer').on('click',function(){
+		$(this).hide();
+		$('.flow-filter-menu').hide();
+	})
+
+});
+</script>
+</body>
+</html>

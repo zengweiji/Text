@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+<link href="css/loan.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+<!--头部-->
+<header class="ld-header"> <a href="/" class="gohome"></a> <span>支付结果</span> <a href="javascript:history.go(-1);" class="goback"></a> </header>
+
+<section class="list-mt30">
+     <div class="pay_Amount pay_top clearfix"> <span>支付金额</span><span>￥49.70 </span> </div>
+     <div class="pay_default">
+          <div class="pay-group">
+               <input name="pay" type="radio" class="regular-checkbox" id="checkbox-1-1" checked />
+               <label for="checkbox-1-1" class="skin-lable-r"></label>
+               <span class="pay_Channel"> 账号余额： 14.69</span> </div>
+     </div>
+     <div class="pay_Amount2 clearfix">
+          <div class="pay-group">
+               <dl class="pay-list">
+                    <dt class="p-name">支付平台</dt>
+               </dl>
+          </div>
+          <div class="pay-group">
+               <input type="radio" id="checkbox-1-2" class="regular-checkbox" name="pay" />
+               <label for="checkbox-1-2" class="skin-lable-r"></label>
+               <dl class="pay-list">
+                    <dt class="p-name"><strong><img src="images/lianlian.png" width="69" height="55" /></strong>微信支付</dt>
+               </dl>
+          </div>
+          <div class="pay-group">
+               <input type="radio" id="checkbox-1-3" class="regular-checkbox" name="pay" />
+               <label for="checkbox-1-3" class="skin-lable-r"></label>
+               <dl class="pay-list">
+                    <dt class="p-name"><strong><img src="images/huixinqianbao.png" width="69" height="55" /></strong>微信支付</dt>
+               </dl>
+          </div>
+     </div>
+     <div class="pay-pp">
+          <p>您当前惠米不足，请立即<a href="javascript:;" class="blue-pay">充值</a></p>
+     </div>
+     <div class="m-wrap"><a href="javascript:;" id="payNow" class="m-btn">立即支付</a></div>
+</section>
+
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box">
+          <div class="Jdialog_content">
+               <h3></h3>
+          </div>
+          <div class="lbBox Jdialog_submit"> <a class="lineBlock" href="javascript:;">确定</a></div>
+     </div>
+     <b class="lineBlock"></b> </div>
+</body>
+<script type="text/javascript">
+$(function(){
+
+    $("#Jdialog").Jdialog({
+        state: 'open',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '交易密码被锁定120分钟',
+        cancel: function(){}, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+})
+</script>
+</html>

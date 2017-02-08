@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>解绑银行卡</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myAccount.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+
+</head>
+<body>
+    <!--头部-->
+    <header class="ld-header">
+        <a href="javascript:history.go(-1);" class="left-ctl goback"></a>
+        <span>银行卡详情</span>
+        <a href="javascript:;" class="right-btn gohome"></a>
+    </header>
+    <section>
+        <div class="reg-form">
+            <ul class="fill-form">
+                <li>
+                    <input class="imp2" type="text" value="周*" readonly="readonly">
+                    <span class="nm-a1">持&nbsp;卡&nbsp;人</span>
+                    <!--2015-11-16 sunce-->
+                    <span class="sigh-icon"></span>
+                    <!--2015-11-16 sunce end-->
+                </li>
+                <li>
+                    <input id="cd-bank" class="imp4" type="text" value="4309***********1789">
+                    <span class="nm-a1">银行卡号</span>
+                </li>
+                <li>
+                    <input class="imp2 c-id" type="text" value="建设银行" readonly="readonly">
+                    <span class="nm-a1">开户银行</span>
+                </li>
+                <li>
+                    <input class="imp2" type="text" value="福建支行">
+                    <span class="nm-a1">开户支行</span>
+                </li>
+                <li>
+                    <input id="inputb" class="imp2" type="text" value="湖南省-长沙市" readonly="readonly">
+                    <span class="nm-a1">所属城市</span>
+                </li>
+                <li>
+                    <div class="submitBotton green-bg mr-tp5"><a href="javascript:;">解绑</a></div>
+                </li>             
+            </ul>
+            <div class="fill-hint">
+                <p class="fh-t">温馨提示：</p>
+                <p class="fh-t">解绑银行卡需满足的条件（只需满足一个条件）：</p>
+                <p class="fh-t">1、无银行卡充值及银行卡转入记录；</p>
+                <p class="fh-t">2、账户余额、在投金额、钱包余额为0；</p>
+                <p class="fh-t">如需帮助请联系客服，电话：<span class="fh-t2">400-693-6588</span></p>
+            </div>
+        </div>
+    </section>
+    <!-- 提示框 -->
+    <div class="Jdialog tip style2" id="regTip">
+        <div class="lineBlock Jtip">
+            <p>为保证账户资金安全，只能绑定实名认证本人的银行卡</p>
+        </div>
+        <b class="lineBlock"></b>
+    </div>
+</body>
+<script type="text/javascript">
+$(function(){
+    //提示弹框
+    $("#regTip").Jtip("为保证账户资金安全，只能绑定实名认证本人的银行卡",1500);
+    //$("#regTip").Jtip("解绑成功",1500);
+})
+</script>
+</html>

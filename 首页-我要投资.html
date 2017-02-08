@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>投资转让-我要投资</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/investAssign.css">
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/radialIndicator.min.js"></script>
+</head>
+<body>
+<div class="ld-body">
+    <!--头部-->
+    <header class="ld-header noBg">
+        <span>脱贫宝</span>
+    </header>
+
+    <section class="topSpace footSpace">
+        <!-- 滑动banner -->
+        <div class="swiper-container bannerBox" id="bannerBox">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:;"><img src="images/wantInvest_bg1.jpg" alt=""/></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="images/indexBanner2.jpg" alt=""/></a></div>
+                <div class="swiper-slide"><a href="javascript:;"><img src="images/indexBanner3.jpg" alt=""/></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- 投资切换 -->
+        <div class="lbBox wantInvest_tab" id="wantInvestTab">
+            <div class="wantInvest_sum fontXiHei">
+                <p class="wis-t1"><i class="wis-icon"></i>可申购金额（元）</p>
+                <h2 class="wis-t2">532,250.00</h2>
+                <a class="wis-t3" href="javascript:;">立即投资</a>
+                <p class="wis-t4">收益计算器>></p>
+                <!-- 收益率 -->
+                <div class="lbBox wantInvest_rate">
+                    <p class="lineBlock">年化收益率14.60%</p>
+                    <p class="lineBlock">万元每日收益4元</p>
+                </div>
+            </div>
+        </div>
+        <!-- 双倍收益 -->
+        <div class="wantInvest_double">
+            <div class="wid-text">
+                <h3 class="widt-t1">脱贫宝上线大酬宾，新手首次投资享双倍收益</h3>
+                <p class="widt-t2">凡2015年12月18日—2016年02月28日期间首次投资享双倍收益，1万元每天8元，机会只有一次，敬请把握!</p>
+                <button class="widt-bt">查看活动详情</button>
+            </div>
+        </div>
+        <div class="lbBox wantInvest_depict fontXiHei">
+            <ul class="lbBox depict_down">
+                <li class="lineBlock"><a href="本息保障.html#link-1"><img src="images/wantInvestIcon_01.png"><p>本息保障</p></a></li>
+                <li class="lineBlock big"><a href="本息保障.html#link-2"><img src="images/wantInvestIcon_02.png"><p>转让保险</p></a></li>
+                <li class="lineBlock"><a href="本息保障.html#link-3"><img src="images/wantInvestIcon_03.png"><p>账户安全</p></a></li>
+            </ul>
+        </div>
+        <div class="lbBox investTitle fontXiHei">
+            <p class="lineBlock">火热投资</p>
+            <a class="lineBlock" href="javascript:;">更多<span class="lineBlock backer"></span></a>
+        </div>
+        <div class="wantInvest_income fontXiHei">
+            <img class="markImg" src="images/wantInvestTag_01.png">
+            <div class="lbBox income_title">
+                <img class="icon lineBlock" src="images/wantInvest02.jpg">
+                <p class="lineBlock">脱贫宝第015期</p>
+            </div>
+            <div class="lbBox income_sum">
+                <div class="lineBlock sumBox sumLeft">
+                    <h3 class="bg1">5,000,000.00</h3>
+                    <p>目标金额 (元)</p>
+                    <span class="lineBlock divide"></span>
+                    <h3>3,000,000.00</h3>
+                    <p>已筹金额 (元)</p>
+                </div>
+                <div class="lineBlock sumBox sumMiddle" id="chart1" style="">
+                    <script class="code" type="text/javascript">
+                        $(document).ready(function () {
+							var remainAmountPercent = 40;
+							var showtxt = '<div class="radialIndicator-title"><strong>' + (100 - remainAmountPercent) + '<span>%</span></strong><p class="fontXiHei">已投额度</p></div>';
+							if (remainAmountPercent == 0) {
+								remainAmountPercent = 100;
+								showtxt = '<div class="radialIndicator-title"><strong class="null">售罄</strong><p>抢光啦</p></div>';
+							}
+							
+                            var chartTemp = $('#chart1');
+							var r1 = chartTemp.outerWidth() - 11 - 121;
+							r1 = chartTemp.outerWidth() / 2.494;
+							if (r1 > 93) r1 = 93;
+							chartTemp.radialIndicator({
+								radius: r1,
+								barColor: '#6bc30d',
+								barWidth: r1 / 6.64,
+								initValue: 0,
+								roundCorner: true,
+								percentage: true,
+								displayNumber: false
+							});
+							chartTemp.append(showtxt);
+							var radialObj = chartTemp.data('radialIndicator');
+							if (radialObj) radialObj.animate(100 - remainAmountPercent);
+                        });
+                    </script>
+                </div>
+                <div class="lineBlock sumBox sumRight">
+                    <h3>14.60%</h3>
+                    <p>年化率</p>
+                    <span class="lineBlock divide"></span>
+                    <p class="bg2">本息保障</p>
+                    <p>随存随取</p>
+                </div>
+            </div>
+        </div>
+        <div class="invest_other fontXiHei">
+            <div class="otherListBox">
+                <p>如果投不上脱贫宝，建议您投资公司旗下：</p>
+                <div class="lbBox otherList">
+                    <a href="javascript:;">
+                        <img class="lineBlock" src="images/wantInvestIcon_05.png">
+                        <div class="lineBlock otherListText">
+                            <h3>惠信宝</h3>
+                            <p>随存随取，年化收益16.47%</p>
+                            <span class="lineBlock backer"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="lbBox otherList">
+                    <a href="javascript:;">
+                        <img class="lineBlock" src="images/wantInvestIcon_06.png">
+                        <div class="lineBlock otherListText">
+                            <h3>创业宝</h3>
+                            <p>随存随取，年化收益16.2%</p>
+                            <span class="lineBlock backer"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="lbBox otherList">
+                    <a href="javascript:;">
+                        <img class="lineBlock" src="images/wantInvestIcon_07.png">
+                        <div class="lineBlock otherListText">
+                            <h3>惠信钱包</h3>
+                            <p>随存随取，年化收益16.8%</p>
+                            <span class="lineBlock backer"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="prompt">
+                <h3>投资小贴士：</h3>
+                <p>每期投资被抢光非常快，建议投资项目抢购前在资金账户做好预充值，避免因为充值耽误时间导致项目停罄。</p>
+            </div>
+        </div>
+        
+    </section>
+    <!--底部导航-->
+ </div>
+<footer>
+    <ul class="lbBox burse-foot">
+        <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg3"></i><p class="bf-t">零钱包</p></a></li>
+        <li class="lineBlock active"><a href="javascript:;"><i class="bfIcon bg1"></i><p class="bf-t">脱贫宝</p></a></li>
+        <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg2"></i><p class="bf-t">借款</p></a></li>
+        <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg4"></i><p class="bf-t">我的</p></a></li>
+    </ul>
+</footer>
+    <!-- 未登录广告层 -->
+    <div class="JAds JOov" id="JOov" style="display:none;">
+        <div class="joov-tbox">
+            <div class="joov-btBox">
+                <a class="joov-bt" href="javascript:;"></a>
+                <a class="joov-bt" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 已登录广告层 -->
+    <div class="JAds" id="JAds">
+        <img class="JAds-img" src="images/burseAds.png" alt=""/>
+        <a class="JAds-close" href="javascript:;"></a>
+        <a class="JAds-exper" href="javascript:;"></a>
+        <div class="JAds-bg"></div>
+        <ul class="lbBox burse-foot">
+            <li class="lineBlock active"><a href="javascript:;"><i class="bfIcon bg3"></i><p class="bf-t">零钱包</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg1"></i><p class="bf-t">投资</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg2"></i><p class="bf-t">借款</p></a></li>
+            <li class="lineBlock"><a href="javascript:;"><i class="bfIcon bg4"></i><p class="bf-t">我的</p></a></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+var indexAction = {
+    init: function(){
+        this.burseAdsJudge();
+        this.banner();
+    },
+    //判断广告
+    burseAdsJudge: function(){
+        this.burseAdsOov();
+        this.burseAds();
+    },
+    //未登录广告
+    burseAdsOov: function(){
+        var ads = $("#JOov");
+        //ads.show();
+//        ads.children(".joov-tbox").click(function(){
+//            ads.hide();
+//        });
+    },
+    //广告
+    burseAds: function(){
+        var ads = $("#JAds");
+
+        if (!localStorage.ads || localStorage.ads === 'false') {
+            ads.fadeIn("slow", function(){
+                positionBt();
+            });
+            document.body.ontouchmove=function(e){
+                e.preventDefault();
+            }
+        }
+        ads.children(".JAds-close").click(function(){
+            adsSuccess();
+        });
+        ads.children(".JAds-exper").click(function(){
+            adsSuccess();
+            alert("进入钱包页面");
+        });
+        function adsSuccess(){
+            ads.fadeOut("slow");
+            document.body.ontouchmove=function(e){
+                return true;
+            }
+            localStorage.ads = 'true';
+        }
+        function positionBt() {
+            var boxWidth = $(window).width();
+            var boxHeight = $(window).height();
+            var btclose = ads.children(".JAds-close");
+            var btexper = ads.children(".JAds-exper");
+            var offset1 = boxWidth / 1.223; //1.168
+            var offset2 = (boxWidth * 1.5) / 1.422; //1.259
+            if ((boxWidth * 1.5) > boxHeight) {
+                var oleft = ((boxHeight * 0.96) / 1.5);
+                offset1 = (oleft / 1.223) + ((boxWidth - oleft) / 2 );
+                offset2 = (boxHeight * 0.96) / 1.422;
+            }
+            btclose.css("left", offset1);
+            btexper.css("top", offset2);
+        }
+    },
+    banner: function(){
+        var swiper = new Swiper('#bannerBox', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            loop: true
+        });
+    },
+    investTab: function(){
+        var swiper2 = new Swiper('#wantInvestTab .wantInvest_sum', {
+            onSlideChangeEnd: function(swiper){
+                var index = swiper.activeIndex;
+                var el = $("#wantInvestTab").children(".wit-top");
+                var sum = 100 / el.children(".wit-t").length;
+                el.children(".wit-arr").css("left", (index*sum)+"%");
+            }
+        });
+        $("#wantInvestTab").children(".wit-top").children(".wit-t").click(function(){
+            var index = $(this).index();
+            swiper2.slideTo(index, 500, true);
+        });
+    }
+}
+$(function(){
+    indexAction.init();
+})
+</script>
+</html>

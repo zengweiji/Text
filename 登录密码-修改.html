@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠卡脱贫宝</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <script src="js/Header.js"></script> 
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header class="ld-header"> <a href="/" class="gohome"></a> <span>登录密码修改</span> <a href="javascript:history.go(-1);" class="goback"></a> </header>
+    <section>
+        <div class="reg-form">
+            <ul class="fill-form">
+                <li>
+                    <input class="imp3" type="text" placeholder="请输入当前密码">
+                    <span class="nm-a1">当前密码</span>
+                </li>
+                <li>
+                    <input id="passwd" class="imp3" type="text" placeholder="请输入新密码">
+                    <span class="nm-a1">新&nbsp;&nbsp;密&nbsp;&nbsp;码</span>
+                    <span class="qr-see">
+                        <a href="javascript:;" class="eye"><img src="images/icon-a5.png" class="open-a1" /></a>
+                        <a href="javascript:;" class="eye2"><img src="images/icon-a2.png" class="close-a1" /></a>
+                    </span>            
+                </li>                
+                <li>
+                    <div class="note-text text-tip"><p>*密码长度8-16位，可使用字母、数字、符号组成，区分大小写。</p></div>
+                </li>
+                <li>
+                    <div class="submitBotton green-bg mr-tp5"><a href="javascript:;">确定</a></div>
+                </li>                
+            </ul>
+        </div>
+    </section>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+    $(function () {
+        $(".eye").click(function () {
+            $(this).css("display", "none");
+            $(".eye2").css("display", "block");
+            $("#passwd[type='text']").attr('type', 'password');
+
+
+        });
+        $(".eye2").click(function () {
+            $(this).css("display", "none");
+            $(".eye").css("display", "block");
+            $("#passwd[type='password']").attr('type', 'text');
+
+
+        });
+    })
+    </script>
+</body>
+</html>

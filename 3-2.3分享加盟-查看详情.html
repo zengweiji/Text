@@ -1,0 +1,491 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>分享加盟-查看详情</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+    <style>
+.app-headImg { width: 100%; overflow: hidden; }
+    .app-headImg > a { width: 100%; display: block; }
+    .app-headImg > a img { width: 100%; }
+    .appTit { width: 100%; overflow: hidden; }
+    .appTit > img { width: 100%; }
+    .appTit01 { background: #eeeeee; width: 100%; padding: 0.8em 0; }
+    .appTit01 img { width: 100%; }
+    .text { width: 100%; background: #fff; }
+    .text h1 { font-size: .17rem; color: #333; text-align: center; padding: .08rem 0; font-weight: normal; }
+    .text p { font-size: .125rem; color: #666666; line-height: 180%; padding: 0 .1rem .1rem; }
+    .Merchants_wrap { width: 100%; background: #eeeeee; padding-bottom: .125rem; }
+    .Merchants_content { width: 95%; margin: 0 auto; }
+    .Merchants_content .Merchants_content_title { padding: .175rem 0 .1rem; width: 100%; }
+    .Merchants_content h2 { color: #ed5564; font-size: .3rem; }
+    .Merchants_content .line { border-top: .02rem solid #ed5564; display: inline-block; width: 75%; margin: .2rem 0; }
+    .Merchants_main_title { width: 100%; background: #ed5564; color: #fff; font-size: .125rem; padding: 0.8em 0; text-indent: .125rem; margin-top: .125rem; }
+    .bder { border-left:  .02rem solid #e7e7e7; border-right:  .02rem solid #e7e7e7; border-bottom:  .04rem solid #d6d6d6; border-top: none; }
+    .bdbottom { border-bottom: none; }
+    .red { color: #e72144; }
+    .Merchants_main_box { background: #fff; }
+    .Merchants_main_box ul { padding-top: .2rem; margin-left: .25rem; }
+    .Merchants_main_box ul li { font-size: .12rem; color: #333; margin-bottom: .15rem; }
+    .Merchants_main_box ul li p { margin-left: .3rem; width: 84%; line-height: 180%; position: relative; }
+    .Merchants_main_box02 ul li p { margin-left: 0; width: 96%; }
+    .Merchants_main_box ul li h3 { color: #484848; margin-left: .3rem; margin-bottom: .1rem; position: relative; font-weight: normal; font-size: .125rem; }
+    .Merchants_main_box ul li span, .Merchants_main_box ul h3 span, .Merchants_main_box01 ul li span { background: #80c269; width: .175rem; height: .175rem; line-height: 100%; text-align: center; border-radius: .04rem; font-size: .18rem; display: inline-block; color: #fff; position: absolute; left: -.25rem; top: .03rem; }
+    .Merchants_main_box ul li span:after, .Merchants_main_box ul h3 span:after, .Merchants_main_box01 ul li span:after { border-bottom: 1px solid #000; border-top: 1px solid #000; border-right: 1px solid #000; border-left: 1px solid #000; display: block; }
+    .Merchants_main_box ul h3 span { top: -.02rem; }
+    .Merchants_main_box01 { background: #fff; color: #333; width: 100%; }
+    .Merchants_main_box01 .redline { display: block; border-top: 1px solid #ed5564; width: 83%; float: right; margin-right: .1rem; }
+    .Merchants_main_box01 h3 { color: #fff; font-size: .125rem; padding: .06rem .1rem; background: #ed5564; width: 35%; margin-left: .2rem; }
+    .Merchants_main_box01 .Merchants_main_box01_content { padding: .15rem  .2rem .2rem; }
+    .Merchants_main_box01 .Merchants_main_box01_content strong { font-size: .18rem; font-weight: normal; padding-bottom: .025rem; display: block; }
+    .Merchants_main_box01 .Merchants_main_box01_content b { font-weight: normal; }
+    .Merchants_main_box01 .Merchants_main_box01_content ul li { line-height: 170%; width: 94%; font-size:.2rem;}
+    .Merchants_main_box01_content strong:after { content: ""; width: .04rem; height: .04rem; border-left: 1px solid #333333; border-bottom: 1px solid #333333; display: inline-block; margin-left: 0; margin-top: -.08rem; -webkit-transform: rotate(-133deg); -moz-transform: rotate(-133deg); -ms-transform: rotate(-133deg); -o-transform: rotate(-133deg); transform: rotate(-133deg); }
+    .Merchants_main_box ul li .P1, .Merchants_main_box ul li .P2 { margin-left: 0; width: 94%; line-height: 165%; }
+    .Merchants_main_box ul li .P1 { padding: .02rem 0 .04rem; }
+    .Merchants_main_box ul li .P2 { font-size: .1rem; }
+    .footer { width: 100%; background: #434a54; padding: .18rem 0; }
+    .footer_con { width: 92%; margin: 0 auto; text-align: center; color: #fff; border: 1px dashed #ed5564; border-radius: .2rem; }
+    .footer_con .P3 { padding-top: .125rem; }
+    .footer_con .P4 { font-size: .15rem; }
+    .footer_con p { font-size: .15rem; line-height: 170%; }
+    .footer_con span { color: #ed5564; }
+    .footer_con .join { font-size: 1.25em; font-weight: bold; }
+    .footer_con strong { font-size: .175rem; padding: .04rem 0 1em; display: block; }
+
+    .tab { padding: .1rem; background: #fff; }
+    .tab-title { border-radius: .05rem; }
+    .tab-title div { width: 100%; }
+    .tab-title strong { display: block; width: 25%; float: left; text-align: center; padding: .06rem 0; color: #333; font-weight: normal; font-size: .22rem; }
+    .tab-title strong.on { background: #ffa81f; color: #fff; }
+    .tab-content { margin: .1rem 0; display: none;font-size: .2rem; }
+    .tab-content h2 { font-size: .15rem; padding: 0.5em 0;  }
+    .tab-content strong { font-size: .1rem; line-height: .25rem; }
+    .tab-content p { font-size: .1rem; color: #333; line-height: .46rem; }
+    </style>
+</head>
+
+<body>
+	<!--头部-->
+    <header class="ld-header"> <span>查看详情</span> <a href="javascript:history.go(-1);" class="goback"></a> </header>
+    <div class="appTit"><img src="images/Merchants_01.jpg"></div>
+    <div class="text">
+        <h1>深圳惠卡世纪集团有限公司</h1>
+        <p>
+            惠卡世纪成立于2013年4月8日，公司总部位于深圳，注册资本5亿元人民币，国内分公司已经覆盖上海、北京、山东、江苏、贵州、香港等地，合作伙伴遍布全国。公司正沿着一路一带战略部署，在泰国、
+            新加坡、印尼、印度等地开展业务。目前，公司员工已经超过1000人，并迅速崛起为互联网行业的新星。
+        </p>
+        <div>
+            <div style="text-align:center; padding-bottom:1.25em;">
+                <iframe class="video_iframe" height="100%" width="100%" style="z-index: 1; overflow: hidden; width: 300px !important; height: 240px !important;" frameborder="0" data-src="http://v.qq.com/iframe/player.html?vid=q015740vavm&amp;width=300&amp;height=240&amp;auto=0" allowfullscreen="" src="http://v.qq.com/iframe/player.html?vid=q015740vavm&amp;width=300&amp;height=240&amp;auto=0" scrolling="no"></iframe>
+                <!--<embed class="video_iframe" height="100%" width="100%" style="z-index: 1; overflow: hidden; width: 300px !important; height: 200px !important;" src='http://www.xiaozibo.com/flash/Main.swf? v=1.01&videoInfo=0,0,N,http://7xlsse.com2.z0.glb.qiniucdn.com/1444709147749a.main.m3u8' quality='high' align='middle' allowscriptaccess='always' allowfullscreen='true' mode='transparent' type='application/x-shockwave-flash' />-->
+            </div>
+        </div>
+    </div>
+    <div class="Merchants_wrap">
+        <div class="Merchants_content">
+            <div class="Merchants_content_title clearfix"><h2 class="float_l">商家入驻</h2><span class="line float_r"></span></div>
+            <div class="Merchants_main_title clearfix" style="margin-top: 0;">商家入驻流程</div>
+            <div class="appTit bder"><img src="images/Merchants_02.jpg"></div>
+            <div class="Merchants_main_title">招商类目</div>
+            <div class="appTit bder"><img src="images/Merchants_03.jpg"></div>
+            <div class="Merchants_main_title">商家入驻政策</div>
+            <div class="Merchants_main_box bder">
+                <ul>
+                    <li>
+                        <p>
+                            <span>1</span>
+                            商城商家入驻：1000元技术服务费，服务产品质量保证金3000元【暂免】。<br />
+                            入驻特权：可发布各种商品全国展销，接受惠粉惠卡买单，全国分销商代理商运营商全部帮您推广做市场。
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>2</span>
+                            本地商家入驻（<strong>O2O</strong>商家）：<strong>100</strong>元技术服务费【暂免】。<br />
+                            入驻特权：接受惠粉惠卡买单，周边惠粉为您引荐客户去消费。可自行免费发布团购套餐，推出爆款吸引惠粉前
+                            去消费，广大惠粉为您宣传推广。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="Merchants_main_title">商家入驻标准</div>
+            <div class="Merchants_main_box Merchants_main_box02 bder">
+                <ul>
+                    <li>
+                        <h3><span>1</span>惠卡商城企业商家</h3>
+                        <p>
+                            1.申请企业需持有企业营业执照、税务登记证、组织机构代码证；<br />
+                            2.如果是品牌商，申请企业需持有商标注册证或者商标受理通知书。如果是渠道商，需提供正规品牌授权书(如果同时代理多个品牌在一家店铺销售可以提供正规的进货渠道证明)；
+                            3.有专业电商团队，有优秀的货源组织能力、发货能力，优质的客户服务团队和经验；<br />
+                            4.支持惠卡商城协议和消费者保障服务协议，承诺商品价格真实、接受惠卡商城平台整体售后策略；<br />
+                            5.通过网络提交的材料如果是复印件的照片或扫描件，则必须加盖企业法人公章。
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>2</span>惠卡商城个人商家</h3>
+                        <p>
+                            1.申请个人需注册成为惠粉，通过惠信钱包实名认证；<br />
+                            2.申请个人需提供提供正规的进货渠道证明；<br />
+                            3.具有完善的服务机制，有优秀的货源组织能力、发货能力，优质的客户服务能力；<br />
+                            4.支持惠卡商城协议和消费者保障服务协议，承诺商品价格真实、接受惠卡商城平台整体售后策略。
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>3</span>惠卡O2O企业商家</h3>
+                        <p>
+                            1.申请企业需持有企业营业执照、税务登记证、组织机构代码证；<br />
+                            2.本地企业商家必须有实体对外营业店面；<br />
+                            3.支持惠卡商城协议和消费者保障服务协议，承诺商品价格真实、接受惠卡商城平台整体售后策略；<br />
+                            4.通过网络提交的材料如果是复印件的照片或扫描件，则必须加盖企业法人公章；<br />
+                            5.如果是品牌商，申请企业需持有商标注册证或者商标受理通知书。如果是渠道商，需提供正规品牌授权书   (如果同时代理多个品牌在一家店铺销售可以提供正规的进货渠道证明)。
+                        </p>
+                    </li>
+                    <li>
+                        <h3><span>4</span>惠卡O2O个人商家</h3>
+                        <p>
+                            1.本地商家负责人必须是准惠粉或惠粉身份。<br />
+                            2.本地商家必须拥有实体店面，有营业执照，为合法经营商家<br />
+                            3.支持惠卡协议和消费者保障服务协议，承诺店铺商品价格真实、接受惠卡平台整体售后策略；<br />
+                            4.本地商家入驻必须提供法人姓名、电话、身份证号码，店铺店面清晰照片，商家介绍等<br />
+                            5.本地商家认可惠卡APP平台入驻收益、分润等政策。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="Merchants_content_title clearfix"><h2 class="float_l">关于惠粉</h2><span class="line float_r"></span></div>
+            <div class="Merchants_main_title" style="margin-top:0;">惠粉加盟流程</div>
+            <!--<div class="appTit"><img src="images/Merchants_04.jpg"></div>-->
+            <div class="appTit bder"><img src="images/Merchants_05.jpg"></div>
+            <div class="Merchants_main_title">加盟惠粉获得四重豪礼</div>
+            <div class="Merchants_main_box bder">
+                <ul>
+                    <li>
+                        <p>
+                            <span>1</span>
+                            赠送惠卡5元现金。
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>2</span>
+                            赠送惠信宝100元体验金。
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>3</span>
+                            赠送惠信钱包100元体验金。
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>4</span>
+                            赠送一元拼宝1个拼宝豆。（注：此项仅限于7月1号之后新注册用户）
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="Merchants_main_title">惠粉特权</div>
+             <div class="Merchants_main_box bder">
+                 <ul>
+                     <li>
+                         <p>
+                             <span>1</span>
+                             享受发展其他惠粉加盟并享受3级加盟分润的特权
+                         </p>
+                     </li>
+                     <li>
+                         <p>
+                             <span>2</span>
+                             享受三级惠粉在惠卡旗下众多消费购物平台三级消费分润，永久有效可世袭继承的特权
+                         </p>
+                     </li>
+                     <li>
+                         <p>
+                             <span>3</span>
+                             惠粉达到一定业绩可以申请升级为区级、市级、省级、全球级代理商，收益及分红丰厚得让人陶醉
+                         </p>
+                     </li>
+                     <li>
+                         <p>
+                             <span>4</span>
+                             惠粉招募入驻惠卡商城销售商品的线上商家、O2O团购的线下商家都有现金奖励
+                         </p>
+                     </li>
+                 </ul>
+             </div>-->
+            <!--<div class="Merchants_main_title">惠粉加盟流程</div>
+            <div class="appTit bder"><img src="images/Merchants_04.jpg"></div>-->
+            <div class="Merchants_main_title">惠粉如何赚钱</div>
+            <div class="appTit bder bdbottom"><img src="images/Merchants_06.jpg"></div>
+            <div class="Merchants_main_box01 bder bdbottom">
+                <div class="redline"></div>
+                <h3>1.邀请加盟奖励</h3>
+                <div class="Merchants_main_box01_content">
+                    <strong>如</strong>
+                    <ul>
+                        <li>您分享了30个感恩惠粉</li>
+                        <li>首次加盟惠卡商城给您市场推广奖励：</li>
+                        <li>一度收益</li>
+                        <li>感恩惠粉：<b class="red">30人*3=90惠米</b></li>
+                        <li>二度收益</li>
+                        <li>感动惠粉：您的30个感恩惠粉每人分享30人就等于您有900个感动惠粉，那么<b class="red">900*2=1800惠米</b></li>
+                        <li>三度收益</li>
+                        <li>感谢惠粉：您的900个感动惠粉每人分享30人就等于您有27000个感谢惠粉，那么<b class="red">27000*3=81000惠米</b></li>
+                        <li>邀请加盟总收益</li>
+                        <li>感恩惠粉+感动惠粉+感谢惠粉=90+1800+81000=<b class="red">82890惠米</b></li>
+                        <li>注：1惠米=1元</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appTit bder bdbottom"><img src="images/Merchants_07.jpg"></div>
+            <div class="Merchants_main_box01 bder bdbottom">
+                <div class="redline"></div>
+                <h3>2.商城消费返利</h3>
+                <div class="Merchants_main_box01_content">
+                    <strong>如</strong>
+                    <ul>
+                        <li>例如：您分享了30个感恩惠粉</li>
+                        <li>如果平均每个惠粉每月在惠卡商城购物或消费所产生的利润是10元：</li>
+                        <li>一度收益</li>
+                        <li>感恩惠粉：<b class="red">30人*10*30%=90惠米</b></li>
+                        <li>二度收益</li>
+                        <li>感动惠粉：您的30个感恩惠粉每人分享30人就等于您有900个感动惠粉，那么<b class="red">900*10*20%=1800惠米</b></li>
+                        <li>三度收益</li>
+                        <li>感谢惠粉：您的900个感动惠粉每人分享30人就等于您有27000个感谢惠粉，那么<b class="red">27000*10*30%=81000惠米</b></li>
+                        <li>每月平台消费总收益：</li>
+                        <li>感恩惠粉+感动惠粉+感谢惠粉=90+1800+81000=<b class="red">82890惠米</b></li>
+                        <li>注：1惠米=1元</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appTit bder"><img src="images/Merchants_08.jpg"></div>
+            <!--<div class="Merchants_main_box01 bder bdbottom">
+                <div class="redline"></div>
+                <h3>3.商家入驻奖励</h3>
+            </div>
+            <div class="appTit bder"><img src="images/Merchants_08.jpg"></div>-->
+            <div class="Merchants_main_title">惠粉升级代理商的政策说明</div>
+            <div class="tab bder">
+                <div class="tab-title">
+                    <div class="clearfix">
+                        <strong class="on">区级代理商</strong>
+                        <strong>市级代理商</strong>
+                        <strong>省级代理商</strong>
+                        <strong>全球代理商</strong>
+                    </div>
+                </div>
+                <div class="tab-content content-0" style="display:block;">
+                    <h3>区级代理商审核标准及分润说明</h3>
+                    <strong>审核标准</strong>
+                    <p>
+                        1. 感恩、感动、感谢惠粉总数达到3万人，感恩惠粉不低于60人；<br />
+
+                        2. 感恩、感动、感谢惠粉在惠卡累计消费额达到15万，累计惠卡消费分润达到3000元；<br />
+
+                        3. 本人在惠卡累计消费不低于3000元；<br />
+
+                        4. 没有虚假注册、冒名、1人注册多个惠粉等违规操作记录；<br />
+
+                        5. 愿意长期投入心力、资源经营惠卡事业；<br />
+
+                        6. 认可并践行守护惠卡企业文化、价值观和使命以及相关规则规章；<br />
+
+                    </p>
+                    <strong>区级代理商的奖金制度：</strong>
+                    <p>
+                        1.区级代理商获得旗下无限代惠粉【或称分销商】首次加盟拓展提成：<br />
+                        计算方式是：加盟惠粉数量*0.6【以下一个代理商为限的无限代】<br />
+                        比如区级代理商旗下有10000个惠粉加盟，那么区级代理商账户上则获得10000*0.6=6000
+                        <br />
+                        2.区级代理商旗下惠粉消费分润：
+                        区级代理商获得旗下无限代惠粉【或称分销商】在惠卡消费产生的消费分润：<br />
+                        计算方式是：旗下无限代惠粉在惠卡消费毛利*6%【以下一个代理为限的无限代】<br />
+                        比如区级代理商旗下无限代惠粉在惠卡消费产生的消费毛利是10万，那么区级代理商账户上则获得10万*6%=6000
+                        <br />
+                        3.获得旗下无限代惠粉【或称分销商】首次加盟拓展提成0.6元/个和旗下无限代惠粉【或称分销商】在惠卡消费购物平台消费毛利6%的永久消费分润【旗下如有代理商需分给旗下代理商那部分】
+                        <br />
+                    </p>
+                </div>
+                <div class="tab-content content-1">
+                    <h3>市级代理商审核标准及分润说明</h3>
+                    <strong>审核标准</strong>
+                    <p>
+                        1.感恩、感动、感谢惠粉总数达到6万人，感恩惠粉不低于120人；<br />
+
+                        2.感恩、感动、感谢惠粉在惠卡累计消费额达到30万，累计惠卡消费分润达到6000元；<br />
+
+                        3.本人在惠卡累计消费不低于6000元；<br />
+
+                        4.没有虚假注册、冒名、1人注册多个惠粉等违规操作记录；<br />
+
+                        5.愿意长期投入心力、资源、组建团队经营惠卡事业；<br />
+
+                        6.认可并践行守护惠卡企业文化、价值观和使命以及相关规则规章；  <br />
+
+                    </p>
+                    <strong>市级代理商奖金制度：</strong>
+                    <p>
+                        1.市级代理商获得旗下无限代分销商【或称惠粉】首次加盟拓展提成：<br />
+                        计算方式是：加盟无限代惠粉数量*0.8【以下一个市级代理或省级、全球代理商为限的无限代】<br />
+                        比如市级代理商旗下有10000个惠粉加盟，那么市级代理商账户上则获得100000*0.8=80000<br />
+                        这里需要说明的是，如果市级代理商旗下有区级代理商的情况下，这80000元还要减去发放给区级代理商的提成剩余的才是市级代理商的收益。
+                        <br />
+                        2.市级代理商旗下惠粉消费分润：
+                        市级代理商获得旗下无限代惠粉【或称分销商】在惠卡消费产生的毛利分成：<br />
+                        计酬方式是：旗下无限代惠粉在惠卡消费毛利*8%【以下一个市级代理为限的无限代】<br />
+                        比如市级代理商旗下所有惠粉在惠卡消费产生的消费毛利是50万，那么市级代理商账户上则获得50万*8%=4万<br />
+                        这里需要说明的是，如果市级代理商旗下有区级代理商的情况下，这4万元还要减去发放给区级代理商的消费分润剩余的才是市级代理商的收益。
+                        <br />
+                        3.获得旗下无限代惠粉【或称分销商】首次加盟拓展提成0.8元/个和旗下无限代惠粉【或称分销商】在惠卡消费购物平台消费毛利8%的永久消费分润【旗下如有代理商需分给旗下代理商那部分】
+                        <br />
+                    </p>
+                </div>
+                <div class="tab-content content-2">
+                    <h3>省级代理商审核标准及分润说明</h3>
+                    <strong>审核标准</strong>
+                    <p>
+                        1.感恩、感动、感谢惠粉总数达到10万人，感恩惠粉不低于200人；<br />
+
+                        2.感恩、感动、感谢惠粉在惠卡累计消费额达到50万，累计惠卡消费分润达到1万元；<br />
+
+                        3.本人在惠卡累计消费不低于1万元；<br />
+
+                        4.没有虚假注册、冒名、1人注册多个惠粉等违规操作记录；<br />
+
+                        5.愿意长期投入心力、资源、组建团队经营惠卡事业；<br />
+
+                        6.认可并践行守护惠卡企业文化、价值观和使命以及相关规则规章。<br />
+
+                    </p>
+                    <strong>省级代理商奖金制度：</strong>
+                    <p>
+                        1.惠卡上月全国加盟月度分红：惠卡公司拨出上一月惠卡全国新增惠粉数*0.5所得对应金额平均分给全国所有的省级代理商【含本国的全球代理商】。<br />
+                        举例：2015年5月惠卡全国新增120000个分销商，那么公司就拨出120000*0.5=60000元平均分配给全国所有的省级代理商【含本国的全球代理商】，比如全国有20个省级代理商【含本国的全球代理商】，那么60000元平均分配给这20个省级代理商【含本国的全球代理商】，那么每人获得3000元。
+                        <br />
+                        2.惠卡上月销售月度分红：惠卡公司另外拨出上一月惠卡全国所有销售毛利率的5%平均分给全国的所有省级代理商【含本国的全球代理商】。<br />
+                        举例：2015年5月惠卡销售毛利润为150万，那么公司就拨出150万*0.5%=7.5万元分配给全国所有的省级代理商【含本国的全球代理商】，比如全国有20个省级代理商【含本国的全球代理商】，那么7.5万元平均分配给这20个省级代理商【含本国的全球代理商】，那么每人获得3750元。
+                        <br />
+                        3.省级代理商旗下无限代惠粉加盟总提奖励：<br />
+                        省级代理商获得旗下无限代分销商【或称惠粉】首次加盟拓展提成：<br />
+                        计算方式是：加盟无限代惠粉数量*1【以下一个省级代理或全球代理商为限的无限代】<br />
+                        比如省级代理商旗下有120000个惠粉加盟，那么省级代理商账户上则获得120000*1=120000<br />
+                        这里需要说明的是，如果省级代理旗下有市级代理商或没有市级代理商但有区级代理商的情况下，这120000元还要减去发放给市级代理的提成剩余的才是省级代理商的收益【或者在没有市级代理商有区级代理商的情况下要减去发放给市级代理商的提成】
+                        <br />
+                        4.省级代理商旗下惠粉在惠卡及附属各大平台消费的消费分润：<br />
+                        省级代理商获得旗下惠粉【或称分销商】在惠卡消费产生的毛利分成：<br />
+                        计算方式是：旗下所有惠粉在惠卡消费毛利*10%【以下一个省级代理为限的无限代】<br />
+                        比如省级代理商旗下所有惠粉在惠卡消费产生的消费毛利是150万，那么省级代理商账户上则获得150万*10%=15万<br />
+                        这里需要说明的是，如果省级代理商旗下有市级代理商或没有市级代理商但有区级代理商的情况下，这15万元还要减去发放给市级代理商的消费分润剩余的才是省级代理商的收益【或者在没有市级代理商有区级代理商的情况下要减去发放给区级代理商的消费分润】
+                        <br />
+                        5.获得旗下无限代惠粉【或称分销商】首次加盟拓展提成1元/个和旗下无限代惠粉【或称分销商】在惠卡消费购物平台消费毛利10%的永久消费分润【旗下如有代理商需分给旗下代理商那部分】
+                        <br />
+                        6.全国新增惠粉加盟0.5元/个的分红和全国消费毛利5%的分红。<br />
+                    </p>
+                </div>
+                <div class="tab-content content-3">
+                    <h3>全球代理商审核标准及分润说明</h3>
+                    <strong>审核标准</strong>
+                    <p>
+                        1.感恩、感动、感谢惠粉总数达到50万人，感恩惠粉不低于1000人；<br />
+
+                        2.感恩、感动、感谢惠粉在惠卡累计消费额达到200万；<br />
+
+                        3.本人在惠卡累计消费不低于5万元；<br />
+
+                        4.没有虚假注册、冒名、1人注册多个惠粉等违规操作记录；<br />
+
+                        5.愿意长期投入心力、资源、组建团队经营惠卡事业；<br />
+
+                        6.认可并践行守护惠卡企业文化、价值观和使命以及相关规则规章；<br />
+
+                    </p>
+                    <strong>全球代理商奖金制度：</strong>
+                    <p>
+                        1.惠卡全球加盟月度分红：惠卡公司另外拨出上一月惠卡新增惠粉数*0.5所得对应金额平均分给全球所有的全球代理商。<br />
+                        举例：2015年5月惠卡全球新增1000000个分销商【及惠粉】，那么公司就拨出1000000*0.5=500000元平均分配给全全球所有的全球代理商，比如全球有5个全球代理商，那么500000元平均分配给这5个全球代理商，那么5月全球代理商月度拓展分红每人获得10万元。
+                        <br />
+                        2.惠卡全球销售月度分红：惠卡公司另外拨出上一月惠卡全球所有销售毛利率的5%平均分给全球的所有全球代理商。<br />
+                        举例：2015年5月惠卡全球销售毛利润为500万，那么公司就拨出500万*0.5%=25万元分配给全球所有的全球代理商，比如全球有5个全球代理商，那么25万元平均分配给这5个省级代理商，那么5月全球代理商月度销售分红每人获得5万元。
+                        <br />
+                        3.全球代理商还能同时与省级代理商一起参加所在国家月度拓展分红和本国月度销售分红。
+                        <br />
+                        4.全球代理商旗下无限代惠粉加盟总提奖励：<br />
+                        全球代理商获得旗下无限代分销商【或称惠粉】首次加盟拓展提成：<br />
+                        计算方式是：加盟无限代惠粉数量*1【以下一个省级代理商或全球代理商为限的无限代】<br />
+                        比如全球代理商旗下新增120000个惠粉加盟，那么全球代理商账户上则获得120000*1=120000<br />
+                        这里需要说明的是，如果全球代理商旗下有省级代理商、市级代理商的情况下，这120000元还要减去发放给省级、市级代理商的提成剩余的才是全球代理商的收益【或者在没有省级、市级代理商只有区级代理商的情况下要减去发放给市级代理商的提成】
+                        <br />
+                        5.全球代理商获得旗下惠粉【或称分销商】在惠卡消费产生的毛利分成：<br />
+                        计算方式是：旗下所有惠粉在惠卡消费毛利*10%【以下一个省级代理商或全球代理商为限的无限代】<br />
+                        比如省级代理商旗下所有惠粉在惠卡消费产生的消费毛利是150万，那么省级代理商账户上则获得150万*10%=15万<br />
+                        这里需要说明的是，如果全球代理商旗下有市级代理商或没有市级代理商但有区级代理商的情况下，这15万元还要减去发放给市级代理商的消费分润剩余的才是全球代理商的收益【或者在没有市级代理商有区级代理商的情况下要减去发放给区级代理商的消费分润】
+                        <br />
+                        6.作为分销商、省级代理商的所有权益【分润+全国分红】不变；
+                        <br />
+                        7.全球新增惠粉加盟0.5元/个的分红和全球消费毛利5%的分红。<br />
+                    </p>
+                </div>
+            </div>
+            <div class="Merchants_content_title clearfix"><h2 class="float_l">关于区域运营商</h2><span class="line float_r" style="width: 55%;"></span></div>
+            <div class="Merchants_main_title clearfix" style="margin-top:0em;">区域独家运营商政策</div>
+            <div class="Merchants_main_box bder">
+                <ul>
+                    <li>
+                        <p>
+                            <span>1</span>
+                            加盟成为惠粉，三级惠粉达到500人，未达500人的可缴纳3000元市场保证金，待达到500人后即可返还。
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <span>2</span>
+                            在区域内开设全国统一装修标准和风格的惠卡体验店，专职员工不低于5人
+                        </p>
+                    </li>
+                    <li>
+                        <p class="P1">以上条件达到的可申请成为您所在的一个区或县的区域独家运营商</p>
+                        <p class="P2">
+                            成为区域独家运营商后，作为分销商权益不变，另获得所运营区域内所有加盟线下O2O商家接受惠粉惠卡买单额的0.2%+所运营区域内所有加盟线下O2O商家团购营业额的0.5%，系统自动结算即时到账，满100元可提现。<br />
+                            在成为区域独家运营商期间惠卡体验店必须保障正常开展各项推广宣传业务，服务好当地加盟商家，如不作为不负责任的，如果关门或关店停止营业则取消区域独家运营商资格或扣发停发运营商收益，业绩良好的可向惠卡公司申请借款做强做透市场业务。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_con">
+            <p class="P3"><span class="join">加盟惠卡,</span>轻松实现<span>财富</span>和<span>事业</span>梦想</p>
+            <p class="P4">寻找已加盟的惠粉<span>引导</span>您加盟吧!</p>
+            <strong>招商热线：400-693-6588</strong>
+            <strong style="margin-top:-1.2em;">商家入驻热线：400-613-7158</strong>
+        </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+    $(function () {
+        $('.tab-title strong').each(function (i) {
+            var obj = this;
+            $(obj).click(function () {
+                if ($(obj).hasClass("on")) {
+                    $(obj).removeClass("on");
+                    $('.content-' + i).hide();
+                } else {
+                    $('.tab-title strong').removeClass("on");
+                    $(obj).addClass("on");
+                    $(".tab-content").hide();
+                    $('.content-' + i).show();
+                }
+
+            });
+        })
+
+    })
+    </script>
+</body>
+</html>

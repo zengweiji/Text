@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>投资转让-收益明细</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/investAssign.css">
+<link href="css/scroll.css" rel="stylesheet" type="text/css">
+<script src="js/iscroll.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    var myScroll,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+	function pullUpAction () {
+	//前台插入数据模拟	
+		setTimeout(function () {		
+	$('#mList').append('<div class="doubleListTitle">2019年01月</div> <div class="doubleListBox"> <div class="lbBox doubleList doubleList2"> <div class="lineBlock listLeft"> <h3>每日收益</h3> <p>2011-09-10</p> </div> <div class="lineBlock listRight"> <p class="lineBlock">+0.01元</p> <span class="lineBlock backer"></span> </div> </div> <div class="lbBox doubleList doubleList2"> <div class="lineBlock listLeft"> <h3>每日收益</h3> <p>2015-09-10</p> </div> <div class="lineBlock listRight"> <p class="lineBlock">+0.01元</p> <span class="lineBlock backer"></span></div></div>')	
+			myScroll.refresh();	// 数据加载完成后，调用界面更新方法 
+		}, 500);	
+	}
+/* //ajax后台交互
+	var page = i++; 
+        Ajax(page); 	
+function Ajax(page) { 
+    $.ajax({
+        type: "post",
+        dataType: "JSON",
+        url: "/youPage",
+        // 你请求的地址
+        data: {
+            'page': page 
+        },
+        success: function (data) {
+            data = eval(data.clientList);
+            if (data.length) { 
+                //加载数据。。。
+            } else {
+                $('.pullUpLabel').html('亲，没有更多内容了！');
+            }
+        },
+        error: function () {
+
+        }
+    });
+}*/
+<!--初始化iScroll控件-->
+function loaded() {
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: false,
+		onRefresh: function () {
+			 if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+			}
+		},
+		onScrollMove: function () {
+
+			 if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			
+	    if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+				pullUpAction();	// 执行ajax回调
+			}
+		}
+	});
+	
+}
+
+//初始化绑定iScroll控件 
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false); 
+</script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+
+<div id="wrapper">
+     <div>
+          <header class="ld-header"> <a href="javascript:history.go(-1);" class="goback"></a> <span>收益明细</span> <a href="/" class="gohome"></a> </header>
+          <section class="topSpace" id="mList">
+          
+                <div class="listItiem">
+                       <div class="doubleListTitle">2015年09月</div>
+                       <div class="doubleListBox">
+                            <div class="lbBox doubleList doubleList2">
+                                 <div class="lineBlock listLeft">
+                                      <h3>每日收益</h3>
+                                      <p>2015-09-10</p>
+                                 </div>
+                                 <div class="lineBlock listRight">
+                                      <p class="lineBlock">+0.01元</p>
+                                 </div>
+                            </div>
+                            <div class="lbBox doubleList doubleList2">
+                                 <div class="lineBlock listLeft">
+                                      <h3>每日收益</h3>
+                                      <p>2015-09-10</p>
+                                 </div>
+                                 <div class="lineBlock listRight">
+                                      <p class="lineBlock">+0.01元</p>
+                                 </div>
+                            </div>
+                            <div class="lbBox doubleList doubleList2">
+                                 <div class="lineBlock listLeft">
+                                      <h3>每日收益</h3>
+                                      <p>2015-09-10</p>
+                                 </div>
+                                 <div class="lineBlock listRight">
+                                      <p class="lineBlock">+0.01元</p>
+                                 </div>
+                            </div>
+                            <div class="lbBox doubleList doubleList2">
+                                 <div class="lineBlock listLeft">
+                                      <h3>每日收益</h3>
+                                      <p>2015-09-10</p>
+                                 </div>
+                                 <div class="lineBlock listRight">
+                                      <p class="lineBlock">+0.01元</p>
+                                 </div>
+                            </div>
+                       </div>
+                </div>     
+                
+                <div class="listItiem">  
+                   <div class="doubleListTitle">2015年08月</div>
+                   <div class="doubleListBox">
+                        <div class="lbBox doubleList doubleList2">
+                             <div class="lineBlock listLeft">
+                                  <h3>每日收益</h3>
+                                  <p>2015-09-10</p>
+                             </div>
+                             <div class="lineBlock listRight">
+                                  <p class="lineBlock">+0.01元</p>
+                             </div>
+                        </div>
+                        <div class="lbBox doubleList doubleList2">
+                             <div class="lineBlock listLeft">
+                                  <h3>每日收益</h3>
+                                  <p>2015-09-10</p>
+                             </div>
+                             <div class="lineBlock listRight">
+                                  <p class="lineBlock">+0.01元</p>
+                             </div>
+                        </div>
+                        <div class="lbBox doubleList doubleList2">
+                             <div class="lineBlock listLeft">
+                                  <h3>每日收益</h3>
+                                  <p>2015-09-10</p>
+                             </div>
+                             <div class="lineBlock listRight">
+                                  <p class="lineBlock">+0.01元</p>
+                             </div>
+                        </div>
+                        <div class="lbBox doubleList doubleList2">
+                             <div class="lineBlock listLeft">
+                                  <h3>每日收益</h3>
+                                  <p>2015-09-10</p>
+                             </div>
+                             <div class="lineBlock listRight">
+                                  <p class="lineBlock">+0.01元</p>
+                             </div>
+                        </div>
+                   </div>
+                </div>   
+          </section>
+          <!-- 向上拉加载更多-->
+          <div class="ld-more" id="pullUp"> <span class="pullUpIcon lineBlock"></span><span class="pullUpLabel lineBlock">继续上拉加载更多...</span>
+          </div>
+     </div>
+</div>
+</body>
+</html>

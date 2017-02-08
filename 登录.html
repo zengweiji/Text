@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠卡脱贫宝</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header class="ld-header"> <a href="/" class="gohome"></a> <span>脱贫宝</span> <a href="javascript:history.go(-1);" class="goback"></a> </header>
+    <section>
+        <div class="content">
+            <div class="logo"><img src="images/logo.png" /></div>     
+            <div class="reg-form">
+                <ul class="fill-form">
+                    <li>
+                        <input class="ipt-user-2 imp5" type="text" placeholder="手机号/惠信号">
+                    </li>
+                    <li>
+                        <input id="passwd" class="ipt-pw imp5" type="password" placeholder="密码">
+                        <span class="qr-see">
+                            <a href="javascript:;" class="eye"><img src="images/icon-a2.png" class="close-a1" /></a>
+                            <a href="javascript:;" class="eye2"><img src="images/icon-a5.png" class="open-a1" /></a>
+                        </span>
+                    </li>
+                    <li>
+                        <input class="ipt-shield imp" type="text" placeholder="请输入验证码">
+                        <span class="obtain2"><img src="images/v-code.jpg" /></span>
+                    </li>                                        
+                    <li>
+                        <div class="submitBotton mr-tp5"><button type="submit" class="sub-bt green-bg">登录</button></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="reg-form clearfix">
+                <a href="javascipt:;" class="blue lf">免费注册</a>
+                <a href="javascipt:;" class="blue rt">找回密码</a>
+            </div>
+        </div>        
+    </section>
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            $(".eye").click(function () {
+                $(this).css("display", "none");
+                $(".eye2").css("display", "block");
+                $("#passwd[type='password']").attr('type', 'text');
+
+
+            });
+            $(".eye2").click(function () {
+                $(this).css("display", "none");
+                $(".eye").css("display", "block");
+                $("#passwd[type='text']").attr('type', 'password');
+
+
+            });
+        })
+    </script>
+</body>
+</html>

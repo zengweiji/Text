@@ -1,0 +1,142 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/loan.css" rel="stylesheet" type="text/css">
+<link href="css/scroll.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script> 
+<script src="js/public.js"></script>
+<script src="js/iscroll.js"></script>
+<script type="text/javascript">
+
+    var myScroll,
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+    function pullUpAction () {
+	setTimeout(function () {		
+	//前台插入数据模拟
+	$('#mList').append('<div class="loan-list-bd"><dl class="loan-list"><dt class="loan-data">2016年10月</dt><dd class="loan-item row"><span class="money">1000.3</span><span class="d-day">1个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd><dd class="loan-item row"><span class="money">200</span><span class="d-day">3个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd><dd class="loan-item row"><span class="money">200</span><span class="d-day">1个月</span><span class="state2">审核失败</span><span class="last-update">2015.10.20</span></dd><dd class="loan-item row"><span class="money">998</span><span class="d-day">6个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd><dd class="loan-item row"><span class="money">100</span><span class="d-day">1个月</span><span class="state3">待放款</span><span class="last-update">2015.10.20</span></dd></dl></div>')
+			myScroll.refresh();	// 数据加载完成后，调用界面更新方法 
+		}, 500);	
+	}
+/* //ajax后台交互
+	var page = i++; 
+        Ajax(page); 	
+function Ajax(page) { 
+    $.ajax({
+        type: "post",
+        dataType: "JSON",
+        url: "/youPage",
+        // 你请求的地址
+        data: {
+            'page': page 
+        },
+        success: function (data) {
+            data = eval(data.clientList);
+            if (data.length) { 
+                //加载数据。。。
+            } else {
+                $('.pullUpLabel').html('亲，没有更多内容了！');
+            }
+        },
+        error: function () {
+
+        }
+    });
+}*/
+<!--初始化iScroll控件-->
+function loaded() {
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: false, 
+		onRefresh: function () {
+			 if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+			}
+		},
+		onScrollMove: function () {
+
+			 if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			
+	    if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = '加载中...';				
+				pullUpAction();	// 执行ajax回调
+			}
+		}
+	});
+	
+}
+
+//初始化绑定iScroll控件 
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', loaded, false); 
+
+$(function(){
+	 $("dd.loan-item:even").addClass("bgsty-g");//奇数行     
+})
+
+</script>
+</head>
+<body>
+<!--头部-->
+<div  id="wrapper">
+<div>
+<header class="ld-header"> <a href="javascript:history.go(-1);" class="goback"></a><span>我的借款</span> </header>
+
+     <section class="my-loan" id="mList">
+          <ul class="loan-list-hd row">
+               <li><a href="#"> 借款金额</a></li>
+               <li><a href="#"> 借款期限</a></li>
+               <li><a href="#"> 借款状态</a></li>
+               <li><a href="#"> 更新时间</a></li>
+          </ul>
+          <div class="loan-list-bd">
+               <dl class="loan-list">
+                    <dt class="loan-data">2015年10月</dt>
+                    <dd class="loan-item row"><span class="money">200</span><span class="d-day">1个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">200</span><span class="d-day">3个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">200</span><span class="d-day">1个月</span><span class="state2">审核失败</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">998</span><span class="d-day">6个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+               </dl>
+          </div>
+          <div class="loan-list-bd">
+               <dl class="loan-list">
+                    <dt class="loan-data">2015年9月</dt>
+                    <dd class="loan-item row"><span class="money">1000.3</span><span class="d-day">1个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">200</span><span class="d-day">3个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">200</span><span class="d-day">1个月</span><span class="state2">审核失败</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">998</span><span class="d-day">6个月</span><span class="state1">审核中</span><span class="last-update">2015.10.20</span></dd>
+                    <dd class="loan-item row"><span class="money">100</span><span class="d-day">1个月</span><span class="state3">待放款</span><span class="last-update">2015.10.20</span></dd>
+               </dl>
+          </div>
+       
+     </section>
+<!-- 向上拉加载更多-->    
+      <div class="ld-more" id="pullUp">
+            <span class="pullUpIcon lineBlock"></span><span class="pullUpLabel lineBlock">继续上拉加载更多...</span>
+      </div>
+      
+  </div>   
+</div>
+
+
+</body>
+</html>

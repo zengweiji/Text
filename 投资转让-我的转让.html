@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>投资转让-我的转让</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+<header class="ld-header">
+    <a href="javascript:history.go(-1);" class="goback"></a>
+    <span>我的转让</span>
+</header>
+
+<section class="topSpace">
+    <div class="rechargeBox">
+        <div class="lbBox recharge" id="recharge">
+            <a class="lineBlock active" href="javascript:;">正在转让</a>
+            <a class="lineBlock" href="javascript:;">已转让</a>
+        </div>
+    </div>
+    <ul class="recharge_ul show">
+        <div class="doubleListBox marginTop">
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <p class="lineBlock">31.00元</p>
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+        </div>
+    </ul>
+    <ul class="recharge_ul">
+        <div class="doubleListBox marginTop">
+            <div class="lbBox doubleList">
+                <div class="lineBlock listLeft">
+                    <h3>投资编号:<p class="lineBlock">hkb153031524</p></h3>
+                    <h3>投资时间:<p class="lineBlock">2015-09-08 00:39:14</p></h3>
+                </div>
+                <div class="lineBlock listRight">
+                    <p class="lineBlock">66.66元</p>
+                    <span class="lineBlock backer"></span>
+                </div>
+            </div>
+        </div>
+    </ul>
+</section>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $("#recharge").children("a").click(function(){
+            $(this).addClass("active").siblings("a").removeClass("active");
+            var index = $(this).index();
+            $(".recharge_ul").removeClass("show").eq(index).addClass("show");
+        })
+    })
+</script>
+</html>

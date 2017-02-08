@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝-签到</title>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+<style>
+html,body{ background:#fff; height:100%;}
+</style>
+</head>
+
+<body>
+    <header class="ld-header noBg">
+    	<a href="javascript:history.go(-1);" class="left-ctl goback"></a>
+    	<a href="#" class="qd-hd-barbtn btn-ctl">奖励记录</a>
+    </header>
+    <div class="qd-main">
+     <div class="qd-part01">
+    	<div class="qd-hd">
+<!--     几种状态的按钮
+				<a href="#" class="qd-m-btn">立即登录</a>
+            	<a href="#" class="qd-m-btn">今日签到</a>
+             	<a href="#" class="qd-m-btn">签到中...</a>
+ -->
+           
+            <a href="#" class="qd-g-btn js-ist"><span class="qd-btn-tips-a">已连签<i class="red">2</i>天</span><span class="qd-btn-tips-b">连签<i>3</i>天更多奖励</span></a>
+
+        </div>
+       </div> 
+        <div class="qd-rulebox">
+        	<h3  class="qd-rulebox-hd">规则说明</h3>
+             <ul class="qd-rule-text">
+                 <li><i class="qd-circle-bg">1</i><span class="qd-rule-item">首次签到获得0.05元现金奖励，连续签到每天增加0.01元现金奖励，连续签到16天及以上每天获得0.2元现金奖励；</span></li>
+                 <li><i class="qd-circle-bg">2</i><span class="qd-rule-item">获得的签到奖励自动累计至账户余额，不能直接提现，需投资后再转让变现或投资零钱包；</span></li>
+                 <li><i class="qd-circle-bg">3</i><span class="qd-rule-item">如果中间有一天间断未签到的，重先开始计算连续签到时间；</span></li>
+                 <li><i class="qd-circle-bg">4</i><span class="qd-rule-item">获得奖励后分享至QQ空间、微信朋友圈后再获得一次奖励，每天只限分享一次。</span></li>
+             
+            </ul>
+        </div>
+    </div>
+<!-- 弹出框 -->
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box qd-tips">
+          <div class="qd-tips-box">
+             <span class="qd-tips-cls js-tips-cls"></span>
+             <dl class="qd-tips-cont">
+
+                    <dt><i class="lineBlock"></i>您已连续签到2天!</dt>
+                    <dd><i class="lineBlock"></i>本次获得<span class="gold">0.06</span>元现金</dd>
+             </dl>
+             <a href="#" class="qd-tips-btn js-share-btn">分享即获双倍奖励</a>
+                            
+          </div>
+     </div>
+     <b class="lineBlock"></b>
+</div>
+
+
+
+
+<!--分享-->
+<div class="share-list-wrap">
+          <div class="share-list-overlay"></div>
+          <div class="share-list">
+               <div class="bdsharebuttonbox lbBox"><a class="bds_wxpy lineBlock" href="#"></a> <a class="bds_qzone lineBlock" href="#"></a> </div>
+               <div class="simple-btns"> <a class="simple-btn cancel" href="javascript:void(0)">取消</a> </div>
+          </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	    $("#Jdialog").Jdialog({state: 'close'});//默认打开
+		$(".js-ist").click(function(){
+			 $("#Jdialog").Jdialog({});
+		})
+		$(".js-tips-cls").click(function(){
+			 $("#Jdialog").Jdialog({state: 'close'});//关闭	 
+		});
+    	
+		$('.js-share-btn').click(function(){//分享
+			$('.share-list-wrap').show();			
+		});
+		$('.share-list-overlay,.share-list .cancel').click(function(){			
+			$('.share-list-wrap').hide()						
+		});
+   
+})
+</script>
+</body>
+</html>

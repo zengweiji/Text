@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>投资转让-投资列表</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqplot.css" />
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.jqplot.min.js"></script>
+    <script src="js/plugins/jqplot.pieRenderer.min.js"></script>
+    <script src="js/plugins/jqplot.donutRenderer.min.js"></script>
+    <style>
+        body{background-color:#f6f7f2;}
+    </style>
+</head>
+<body>
+<!--头部-->
+<header class="ld-header">
+    <a href="javascript:history.go(-1);" class="goback"></a>
+    <span>投资列表</span>
+</header>
+
+<section class="investListing topSpace">
+    <div class="wantInvest_income fontXiHei">
+        <img class="markImg" src="images/wantInvestTag_01.png">
+        <div class="lbBox income_title">
+            <img class="icon lineBlock" src="images/wantInvest02.jpg">
+            <p class="lineBlock">脱贫宝第015期</p>
+        </div>
+        <div class="lbBox income_sum">
+            <div class="lineBlock sumBox sumLeft">
+                <h3 class="bg1">5,000,000.00</h3>
+                <p>目标金额 (元)</p>
+                <span class="lineBlock divide"></span>
+                <h3>3,000,000.00</h3>
+                <p>已筹金额 (元)</p>
+            </div>
+            <div class="lineBlock sumBox sumMiddle" id="chart1" style="">
+                <script class="code" type="text/javascript">
+                    $(document).ready(function () {
+                        var plot2 = $.jqplot('chart1', [[['', 44], ['', 56]]], {
+                            seriesColors: ["#6bc30d", "#eee"],
+                            title: {
+                                show: true,
+                                text: '<strong>44<span>%</span></strong><p class="fontXiHei">剩余可投额度</p>'
+                            },
+                            grid: {
+                                drawBorder: false,
+                                drawGridlines: false,
+                                background: '#fff',
+                                shadow: false
+                            },
+                            seriesDefaults: {
+                                shadow: false,
+                                renderer: $.jqplot.DonutRenderer,
+                                rendererOptions: {
+                                    startAngle: -90,
+                                    padding: 0,
+                                    diameter: 180,
+                                    innerDiameter: 210
+                                }
+                            }
+                        });
+                    });
+                </script>
+            </div>
+            <div class="lineBlock sumBox sumRight">
+                <h3>14.60%</h3>
+                <p>年化率</p>
+                <span class="lineBlock divide"></span>
+                <p class="bg2">本息保障</p>
+                <p>随存随取</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wantInvest_income fontXiHei incomeNull">
+        <img class="markImg" src="images/wantInvestTag_02.png">
+        <div class="lbBox income_title">
+            <img class="icon lineBlock" src="images/wantInvest02.jpg">
+            <p class="lineBlock">脱贫宝第015期</p>
+        </div>
+        <div class="lbBox income_sum">
+            <div class="lineBlock sumBox sumLeft">
+                <h3 class="bg1">5,000,000.00</h3>
+                <p>目标金额 (元)</p>
+                <span class="lineBlock divide"></span>
+                <h3>3,000,000.00</h3>
+                <p>已筹金额 (元)</p>
+            </div>
+            <div class="lineBlock sumBox sumMiddle" id="chart2" style="">
+                <script class="code" type="text/javascript">
+                    $(document).ready(function () {
+                        var plot2 = $.jqplot('chart2', [[['', 0], ['', 100]]], {
+                            seriesColors: ["#6bc30d", "#eee"],
+                            title: {
+                                show: true,
+                                text: '<strong class="null">售罄</strong><p>抢光拉</p>'
+                            },
+                            grid: {
+                                drawBorder: false,
+                                drawGridlines: false,
+                                background: '#fff',
+                                shadow: false
+                            },
+                            seriesDefaults: {
+                                shadow: false,
+                                renderer: $.jqplot.DonutRenderer,
+                                rendererOptions: {
+                                    startAngle: -90,
+                                    padding: 0,
+                                    diameter: 180,
+                                    innerDiameter: 210
+                                }
+                            }
+                        });
+                    });
+                </script>
+            </div>
+            <div class="lineBlock sumBox sumRight">
+                <h3>14.60%</h3>
+                <p>年化率</p>
+                <span class="lineBlock divide"></span>
+                <p class="bg2">本息保障</p>
+                <p>随存随取</p>
+            </div>
+        </div>
+    </div>
+    <div class="loadingDiv">
+        <p>加载更多...</p>
+    </div>
+    <div class="loadingDiv" style="display:none;">
+        <p>正在加载...</p>
+        <img src="images/loading_icon02.png">
+    </div>
+    <div class="loadingDiv" style="display:none;">
+        <p>暂无数据</p>
+    </div>
+</section>
+</body>
+</html>

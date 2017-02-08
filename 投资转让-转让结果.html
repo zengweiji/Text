@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>投资转让-转让结果</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/investAssign.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--头部-->
+<header class="ld-header">
+    <span>转让结果</span>
+</header>
+
+<section class="bgColor1 topSpace">
+    <div class="applyResult">
+        <img src="images/investSuccessbg.png">
+        <h2>您已成功提交转让申请</h2>
+    </div>
+    <div class="contentListBox">
+        <label class="lbBox">
+            <h3 class="lineBlock">转让本金</h3>
+            <p class="lineBlock">31.56元</p>
+        </label>
+        <label class="lbBox">
+            <h3 class="lineBlock">转让手续费</h3>
+            <p class="lineBlock">0.56元</p>
+        </label>
+        <label class="lbBox">
+            <h3 class="lineBlock">实际到账金额</h3>
+            <p class="lineBlock">31.00元</p>
+        </label>
+        <label class="lbBox">
+            <h3 class="lineBlock">转让提交时间</h3>
+            <p class="lineBlock">2015-09-08 00:39:14</p>
+        </label>
+        <label class="lbBox">
+            <h3 class="lineBlock">投资编号</h3>
+            <p class="lineBlock">hkb153031524</p>
+        </label>
+        <label class="lbBox hide">
+            <h3 class="lineBlock">投资编号</h3>
+            <p class="lineBlock">hkb153031524</p>
+        </label>
+        <label class="lbBox hide">
+            <h3 class="lineBlock">投资编号</h3>
+            <p class="lineBlock">hkb153031524</p>
+        </label>
+        <label class="lbBox hide">
+            <h3 class="lineBlock">投资编号</h3>
+            <p class="lineBlock">hkb153031524</p>
+        </label>
+    </div>
+    <p class="moreBt" id="moreBt"><span class="lineBlock">展开其他投资编号</span><span class="arrow-d lineBlock"></span></p>
+    <div class="btBox">
+        <a href="javascript:;">返回首页</a>
+    </div>
+</section>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var more = true;
+        $("#moreBt").click(function(){
+            if (more) {
+                $(".contentListBox").children("label.hide").css("display","block");
+                $(this).html("<span class='arrow-u lineBlock'></span>");
+                more = false;
+            }else{
+                $(".contentListBox").children("label.hide").hide();
+                $(this).html("<span class='lineBlock'>展开其他投资编号</span><span class='arrow-d lineBlock'></span>");
+                more = true;
+            }
+        });
+    })
+</script>
+</html>

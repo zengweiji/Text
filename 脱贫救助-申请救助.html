@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠卡脱贫宝</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/account.css" rel="stylesheet" type="text/css">
+    <link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.16.1.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript" src="js/mobiscroll.custom-2.16.1.min.js"></script>
+    <script type="text/javascript" src="js/cityData.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header class="ld-header"> <a href="/" class="gohome btn-ctl"></a> <span>申请救助</span> <a href="javascript:history.go(-1);" class="goback left-ctl"></a> </header>
+    <section>
+        <div class="content">   
+            <div class="reg-form">
+                <ul class="fill-form">
+                    <li class="tip-three">
+                        <p class="three"><img src="images/help-bg-a1.png" /></p>
+                        <span class="lf wd-33">在线申请</span><span class="lf  wd-33 ta-ct">资质审核</span><span class="rt wd-33 ta-rt">在线放款</span>
+                    </li>
+                    <li>
+                        <input class="ipt-user imp6" type="text" placeholder="请输入您的姓名">
+                    </li>
+                    <li>
+                        <input class="ipt-time imp6" type="text" placeholder="请输入您的年龄">
+                    </li>
+                    <li>
+                        <input class="ipt-phone imp6" type="text" placeholder="请输入您的手机号码">
+                    </li>
+                    <li>
+                        <input class="ipt-occ imp6" type="text" placeholder="请输入您的职业">
+                    </li>
+                    <li>
+                        <input class="ipt-money imp6" type="text" placeholder="请输入您年收入（元）">
+                    </li>
+                    <li>
+                        <input id="inputb" class="ipt-coo imp6" type="text" placeholder="请选择您的家庭地址" readonly>
+                        <span class="control-tj"><i class="arrow_bm"></i></span>
+                    </li>
+                    <li>
+                        <input class="ipt-street imp6" type="text" placeholder="请输入您所在的乡镇/街道">
+                    </li>
+                    <li>
+                        <input class="ipt-coo2 imp6" type="text" placeholder="请输入您所在的详细地址">
+                    </li>
+                    <li class="textarea-a1 ipt-code imp6">
+                        <textarea name="contactus" class="" placeholder="请简要介绍您申请救助的理由"></textarea>
+                    </li>                                      
+                    <li>
+                        <div class="submitBotton green-bg mr-tp5"><a href="javascript:;">提交申请</a></div>
+                    </li>
+                    <li>
+                        <div class="note-text"><p class="grey">点击提交申请即表示您同意<a href="javascript:;" class="blue">《脱贫宝借款协议》</a></p></div>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </section>
+    <!-- 提示框 -->
+    <div class="Jdialog tip">
+        <div class="lineBlock Jtip">
+            <p>您的救助申请已提交，等待审核！</p>
+        </div>
+        <b class="lineBlock"></b>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $(".submitBotton").click(function () {
+                $(".Jdialog").fadeIn()
+                $(".Jdialog").Jtip("您的借款申请已提交，等待审核！", 2000);//提示层;
+            })
+        })
+    </script>
+
+
+    <!--城市插件-->
+    <script>
+    $(document).ready(function () {
+        $("#cd-bank").click(function () {
+            $(".wap_box").css("display", "block");
+            $(".overlayer2").show();
+        })
+        /*遮罩层点击时*/
+        $('.overlayer2').click(function () {
+            $('.overlayer2').hide();
+        });
+        $(".wap_box").click(function () {
+            $('.overlayer2').hide();
+        })
+        /*页面加载添加遮罩层*/
+        $("<div class='overlayer'></div><div class='overlayer2'></div>").appendTo($('body'));
+
+
+        //    // 选择省市区
+        //    $('#inputb').click(function() {
+        //        $('.footer').show();
+        //    });
+        //
+        //    $('.sel_city_footl').click(function() {
+        //        $('.footer').hide();
+        //    });
+        //    $('.sel_city_footr').click(function() {
+        //        $('.footer').hide();
+        //        // alert($(".xz").text());
+        //        $('#inputb').val($(".xz li").text());
+        //        $('#inputb').css({color: '#000'});
+        //    });
+        var cityLinkage = {
+            cityDataAttr: {},
+            init: function () {
+                this.loadCityData();
+            },
+            loadCityData: function () {
+                this.cityDataAttr = getCityData();
+                this.insertCityData();
+            },
+            insertCityData: function () {
+                var city = this;
+                var data = city.cityDataAttr.data;
+                if (data) {
+                    var liTemp = listTree(data);
+                    //console.log(liTemp);
+                    if ($("#cityList").length <= 0) {
+                        $("#inputb").after("<div id='cityList' value='省 / 市 / 区'></div>");
+                    }
+                    $("#cityList").empty().append(liTemp);
+
+                    $('#cityList').mobiscroll().treelist({
+                        title: '',
+                        theme: 'mobiscroll',
+                        lang: 'zh',
+                        display: 'bottom',
+                        id: "abcc",
+                        placeholder: '省 / 市 / 区',
+                        labels: ['省', '市', '区'],
+                        onSelect: function (valueText, inst) {
+                            $("#inputb").val(valueText);
+                        }
+                    });
+
+                    $("#inputb").click(function () {
+                        $("#cityList").mobiscroll("show");
+                        return false;
+                    });
+                }
+                //递归添加数据
+                function listTree(dataTemp) {
+                    var temp = "";
+                    $.each(dataTemp, function (i, item) {
+                        temp += "<li data-val='" + item.name + "'>" + item.name;
+                        if (item.children) {
+                            var temp2 = "<ul>";
+                            temp2 += listTree(item.children);
+                            temp2 += "</ul>";
+                            temp += temp2;
+                        }
+                        temp += "</li>";
+                    });
+                    return temp;
+                }
+            }
+        }
+        cityLinkage.init();
+    })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body { padding-top:0 !important; }
+.box-a1{ width: 100%; padding-left: 4%;}
+.box-a2{ width: 100%; padding: 0 2%;}
+.white-bg{ background-color: #ffffff;}
+.grey-bg{ background-color: #dbdbdb;}
+.grey2-bg{ background-color: #626361; }
+.green-bg{ background-color: #4ab854; }
+.grey{ color: #999999; }
+.grey2{ color: #666666; }
+.grey3{ color: #333333; }
+.blue{ color: #4aa9ff; }
+.blue-a1{ color: #4aa9ff; }
+.green{ color: #01c55d; }
+.lf{ float: left;}
+.rt{ float: right; }
+.mg-30{ margin: .3rem auto .1rem auto; }
+.mg-20{ margin: .2rem 0 0 0; }
+.mr-8{ margin-right: .08rem; }
+.mr-22{ margin-right: 0; }
+.ml-103{ margin-left: 1.03rem; }
+.ml-165{ margin-left: 1.65rem; }
+.mr-10 { margin-right: 10%;}
+.mr-tp5 { margin-top: 5%;}
+.mr-tp20{ margin-top: 20% !important; }
+.mb-20{ margin-bottom: .2rem !important; }
+.pd-30{ padding:0 .3rem;}
+i.arrow_rt{ -webkit-transform:rotate(45deg); border:1px solid #c3c3c3; width:.2rem; height:.2rem; position:absolute; top: 10%; left: -50%; }
+i.arrow_bm{ -webkit-transform:rotate(45deg); border:.03rem solid #c3c3c3; width:.23rem; height:.23rem; position:absolute; top: -42%; left:0; }
+.qr{ display: block;  line-height: 0 !important;}
+.qr img{ width: .5rem; height:.5rem;}
+/*2015-11-13 sunce*/
+.qrImg-id img{ margin-top: 25% !important;width: .5rem; height:.5rem; }
+/*2015-11-13 sunce*/
+input.imp{ padding-right: 32% !important; }
+input.imp2,input.imp3,input.imp4,input.imp5,input.imp6{ padding: .19rem .78rem .19rem 1.9rem !important; }
+input.imp5,input.imp6{padding: .18rem .78rem .18rem .88rem !important;}
+.imp7{ padding-right:2.4rem;}
+.text-tip{ font-size: .2rem !important;}
+.c-id{ font-size: .24rem !important; }
+.wd-33{ width: 33.3%;}
+.ta-ct{ text-align: center;}
+.ta-rt{ text-align: right;}
+.bor-rt{ border-right: 1px solid #e5e5e5; }
+.bor-bt{ border-bottom: 1px solid #e5e5e5; }
+.no-bor{ border: none !important; }
+.wd-210{ width: .21rem !important; margin: 0 auto; }
+
+/*字体*/
+.ft-28{ font-size:.28rem; }
+.ft-32{ font-size:.32rem; }
+
+/*账户详情*/
+.content{ background: #f6f7f2; width: 100%; }
+.box-a1 a { display:block;}
+.box-a1 a:visited{ text-decoration:none;color:#eee ; }
+.content h6{ font-size: .27rem; color: #333; text-indent: 2%; line-height: .7rem; }
+.main{ overflow: hidden; background-color: #fff;}
+.inner{ position: relative; width: 100%; border-bottom: 1px solid #eeeeee !important; overflow: hidden; line-height:.8rem; }
+.inner p{ font-size: .25rem; color: #333; }
+.control-wd{ overflow: hidden; width:.3rem; height:.3rem; position:absolute; top: 50%; right: 0; margin-top: -.15rem; }
+
+/*更改绑定手机*/
+.fill-form li { margin-bottom:.2rem; position: relative;}
+.obtain { position: absolute; top: 25%; right: 5%; display: block; text-align: center; color: #fff; padding: .5rem 1rem; border-radius:.5rem;}
+.submitBotton{ border-radius: .05rem; }
+.submitBotton > a, .submitBotton .sub-bt{width:100%;font-size: .32rem;color:#FFF;padding: .15rem 0;display: block;text-align: center;font-family:'microsoft yahei';}
+
+/*实名认证-提交资料*/
+.nm-a1{ position: absolute; top: 0; left: .3rem; display: block; text-align: center; line-height: .7rem; font-size: .28rem;}
+.submitBotton2{ border-radius: 0.5rem; width: 90%; margin: 0 auto;  }
+.submitBotton2 > a{width:100%;font-size: .32rem;color:#FFF;padding: .15rem 0;display: block;text-align: center;}
+
+/*交易密码*/
+.fill-form li input[type='password'] { display:block; width:100%; height:.72rem; padding-left:.81rem; border:1px solid #e5e5e5; border-radius:.05rem; background-position:.32rem center; background-repeat:no-repeat; background-size:.41rem auto; font-size:.28rem; }
+/*.fill-form .nm-a1{font-size:0;}*/
+.fill-form .nm-img{width:0.41rem;height:0.4rem;display:inline-block;vertical-align:middle;}
+.fill-form .nm-img:after{content:'';width:0;height:100%;display:inline-block;vertical-align:middle;}
+.fill-form .imp3{padding-left:27%!important;}
+.qr-see{ position: absolute; top: 0 ; right: 0 ;}
+.qr-see img{ width: .4rem; }
+.eye{ display: block; width: 100%; height: .72rem; }
+.eye2{ display: none; width: 100%; height: .72rem; }
+.open-a1{ margin:.24rem .2rem 0 .2rem;}
+.close-a1{ margin:.32rem .2rem 0 .2rem;}
+
+/*添加银行卡*/
+.close-b1{ padding-top: .3rem;}
+.look { position: absolute; top: 0; right: 0; }
+.look img{ width: 100%; margin: 100% 0 0 170%;}
+.control-tj{ overflow: hidden; width:.5rem; height:.3rem; position:absolute; top: 50%; right: 0; margin-top: -.1rem; }
+.fill-form span.remove {position: absolute;right: .22rem;top:.07rem;font-size: .45rem;color: #ccc;z-index: 2;display: block;}
+#cityList_dummy{display:none;}
+/*2015-11-16 sunce*/
+.sigh-icon{ display: block; width: .8rem; height: .72rem; position: absolute; top: 0; right: 0; background: url(../images/icon-a6.png) center center no-repeat; background-size: 60%;}
+/*2015-11-16 sunce*/
+
+/*登录*/
+.logo{  width: 1.6rem; margin: .5rem auto; }
+.logo img{ width: 100%; }
+.fill-form li .ipt-user-2{ background-image:url(../images/ipt-user-2.gif) !important;}
+.fill-form li .ipt-shield{ background-image:url(../images/ipt-shield.gif) !important;}
+.fill-form li .ipt-qrc{ background-image:url(../images/ipt-qrc.png);}
+.obtain2 { position: absolute; top: .12rem; right: .12rem; display: block; text-align: center; color: #fff; border-radius:.5rem; width: 1.5rem;}
+.obtain2 img{ width: 100%; }
+
+/*步骤模块1*/
+.step-box{ margin: .2rem auto 0; width: 5.8rem; font-size:0;}
+dt.step-box-bg{ height: .72rem; display:block;background: url(../images/step-bg.png) 0 0  no-repeat; background-size:cover;}
+dd.step-box-txt{ width:50%; text-align:center; color: #8c8c8c; font-size:.2rem; padding:.2rem 0 .4rem 0;}
+.step-box.step2-light dt.step-box-bg{background: url(../images/step-bg.png)  0 bottom no-repeat; background-size:cover;}
+.step2-light dd.step-box-txt{color: #4ab854;}
+
+/*申请救助*/
+.fill-form li.tip-three { position: relative; overflow: hidden; display:block; width:100%; border-radius:.05rem; font-size:.28rem; background: #ffffff; padding:.905rem .3rem .105rem .2rem;}
+.three{ position: absolute; top: 15% ; left: 9%; width: 80%;}
+.three img{ width: 100%; }
+.fill-form li.textarea-a1 { overflow: hidden; display:block; width:100%; border:1px solid #e5e5e5; border-radius:.05rem; background-position:.32rem .2rem; background-repeat:no-repeat; background-size:.41rem auto; font-size:.28rem; padding: .205rem .205rem .205rem .88rem; background-color: #fff;}
+.fill-form li textarea { overflow: hidden; display:block; width:100%; height:1.76rem; font-size: .28rem; line-height: .4rem; resize: none;}
+.fill-form li.ipt-code{ background-image:url(../images/ipt-code.gif); background-repeat: no-repeat;}
+
+/*添加借款申请表*/
+.cli-eje{ width: 100%; padding: .105rem 0; border-bottom: 1px solid #e5e5e5;}
+.cli-eje a{ width: 49.5%; height: .6rem; line-height: .6rem; text-indent: 22%; }
+.cli-eje a.icon-pic{ background:url(../images/icon-pic.png) 30% 50% no-repeat;background-size:.4rem .34rem;}
+.cli-eje a.icon-doc{ background:url(../images/icon-doc.png) 30% 50% no-repeat;background-size:.4rem .34rem;}
+.pho-img{ padding: .3rem 0; border-bottom: 1px solid #e5e5e5; }
+.pho-img .head-old{ overflow: hidden; font-size: 0;}
+.pho-img .head-old li{ display: inline-block; width: 30%; margin: 0 1.66%; }
+.pho-img .head-old li img{ width: 100%; }
+.text-doc{ overflow: hidden; height: .805rem; line-height: .805rem; }
+.cho-graph{ display:none; position:fixed; left:0; top:0; width:100%; height:100%; }
+.cho-graph-content { display:table; width:100%; height:100%; background-color:#000; opacity: .2; z-index:1;}
+.cho-graph-inner{ position: absolute; bottom: 0; left: 0; width: 100%; height: 3.2rem; background-color: #f6f7f2; z-index: 9; }
+.info a{ display: block; height: 1rem; line-height: 1rem; background-color: #fff; border-bottom: 1px solid #e5e5e5; text-align: center; }
+
+/*照片大图查看*/
+.photo_view_wrap { display:none; position:fixed; left:0; top:.9rem; width:100%; height:100%; background-color:#000;}
+.photo_view_content { display:table; width:100%; height:100%; background-color:#000}
+.photo_view_content .inner { display:table-cell; vertical-align:middle; text-align:center;}
+.photo_view_content img { max-width:6.4rem; max-height:8rem;}
+.photo_menu_wrap .icon { position:fixed; right:.4rem; bottom:.4rem; width:.8rem; max-width:1rem; max-height:1rem; height:.8rem; border:.03rem solid #fff; font-size:0; line-height:0; border-radius:100%; vertical-align:middle}
+.photo_menu_wrap {  position:fixed; left:0; bottom:0; width:100%;}
+.photo_menu_wrap .icon>div { display:table; width:100%; height:100%; overflow:hidden;}
+.photo_menu_wrap .icon>div>span { display:table-cell;vertical-align:middle}
+.photo_menu_wrap .icon i{ display:inline-block; width:50%; height:.02rem; margin:.05rem 25%; background-color:#fff; font-size:0;line-height:0;}
+.photo_menu {display:none;}
+.photo_menu .transparent_layer { position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,.5)}
+.photo_menu_list { z-index:1; position:relative; width:95%;margin:0 auto;}
+.photo_menu_list a { display:block; height: .8rem; margin-bottom:.15rem; font-size:.28rem; line-height:.8rem; text-align:center; border-radius:.06rem; background:#f2f2f2; color:#007aff}
+.photo_menu_list a:first-child { color:#e02428}

@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>准惠粉加盟</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<style>
+.Jdialog { background:none;}
+</style>
+</head>
+
+<body>
+ <header class="ld-header"><span class="left-ctl">
+             <a class="btn-txt lineBlock close-btn" href="#">关闭</a>
+         </span> 
+         <span class="lbBox btn-ctl">
+             <a href="#" class="btn-txt lineBlock">邀请</a>
+         </span><span>准惠粉加盟</span> 
+ </header>
+
+    <div class="banner"><img src="images/banner-reg.jpg" alt=""/></div>
+    <div class="reg-form">
+
+          <ul class="fill-form">
+                <li> <div class="note-text"><p class="grey">完成注册后，即可获得<span class="orange">1000</span>元体验金及<span class="orange">5</span>次抽奖机会</p></div><li>
+                <li>
+                    <input class="ipt-phone" type="text" placeholder="11位手机号码">
+                </li>
+                <li>
+                    <input class="ipt-code" type="text" placeholder="手机验证码">
+                    <a class="obtain" href="#">获取验证码</a>
+                    <!--<span class="timer">119s</span>-->
+                </li>
+                <li>
+                    <input class="ipt-pw" type="text" placeholder="8~16位密码">
+                </li>
+                <li>
+                    <input class="ipt-pw-2" type="text" placeholder="确认密码">
+                </li>
+                
+            </ul>
+            
+           <div class="btn-reg"><a class="btn-d" href="#">免费注册</a><!--<a class="btn-c" href="#">免费注册</a>--></div>
+           <p class="user-protocol">点击免费注册即表示您同意<em>《用户注册协议》</em></p>
+    </div>
+
+	<!--弹出提示-->
+	<div class="Jdialog"><div class="lineBlock Jtip"><p><!--请输入真实姓请输入您的手机号码名--></p></div><b class="lineBlock"></b></div>
+    <script>
+    $(function(){
+		$(".Jdialog").Jtip("我们已经给你1353333333发送了验证短信",2000);
+		
+	})
+    </script>
+</body>
+</html>

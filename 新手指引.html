@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>新手指引</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/swiper.min.css">
+<script src="js/Header.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<style>
+html { height:100%; overflow:hidden; }
+body { background:url(images/guidebg.png) no-repeat bottom #47b750;  height:100%;}
+.swiper-container{  height:90%;}
+.swiper-wrapper { text-align:center;}
+.swiper-slide img { height:80%; width:auto; }
+.swiper-pagination{bottom:1rem!important; font-size:0; width:100%;}
+.swiper-pagination-bullet{background-color: rgba(255, 255, 255, 0.4); border-radius: 50%; display: inline-block; width:0.15rem; height:0.15rem; margin: 0 0.15rem; }
+</style>
+</head>
+<header class="ld-header">
+<span class="lbBox btn-ctl"> <a href="/" class="gohome"></a> </span> <span>新手指引</span>
+</header>
+        <div class="swiper-container" id="bannerBox">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/guide0.png" alt=""/></div>
+                <div class="swiper-slide"><img src="images/guide1.png" alt=""/></div>
+                <div class="swiper-slide"><img src="images/guide2.png" alt=""/></div>
+                <div class="swiper-slide"><img src="images/guide3.png" alt=""/></div>
+                <div class="swiper-slide"><img src="images/guide4.png" alt="" /></div>
+            </div>
+         
+        </div>
+           <div class="swiper-pagination"></div>
+
+<script>
+	 var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: false,
+            autoplayDisableOnInteraction: false,
+      });
+</script>
+</body>
+</html>

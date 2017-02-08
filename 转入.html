@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>转入</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/investAssign.css">
+<link rel="stylesheet" href="css/loan.css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body class="bgColor1">
+<!--头部-->
+<header class="ld-header">
+        <span class="left-ctl">
+            <a href="#" class="goback gobackfromhistory"></a>
+        </span>
+        <span>转入</span>
+</header>
+<section class="topSpace">
+     <div class="rechargeBox">
+          <div class="lbBox recharge" id="recharge"> <a class="lineBlock active" href="javascript:;">从银行卡转入</a> <a class="lineBlock" href="javascript:;">从账户余额转入</a> </div>
+          <div class="profit-tip">
+                	<h3>30天预计可增加收益（元）</h3>
+                    <p class="profit-amount">0.00</p>
+          </div>
+     </div>
+     <ul class="recharge_ul show">
+          <div class="contentListBox fontColor2 borderTop">
+               <label class="lbBox">
+               <h3 class="lineBlock">零钱包余额</h3>
+               <p class="lineBlock">14.56元</p>
+               </label>
+               <label class="rel">
+                   <h3 class="lineBlock">转入金额</h3>
+                   <p class="pay-amount-w">
+                   <span class="float_r">元</span><input class="float_r" type="text" placeholder="请输入转入金额"></p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">还可转入金额</h3>
+               <p class="lineBlock">9999.56元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">收益发放日期</h3>
+               <a class="lineBlock yields" href="javascript:;" id="js-yields"><span class="sigh-icon"></span><i class="date lineBlock">2015-12-02</i></a>
+               </label>  
+               <label class="lbBox">
+               <h3 class="lineBlock">银行卡号</h3>
+               <p class="lineBlock">6217****5872(建设银行)</p>
+               </label>
+          </div>
+          <div class="contentListBox borderTop2">
+               <label class="lbBox">
+               <h3 class="lineBlock">支付平台</h3>
+               <p class="lineBlock"><img src="images/payImg_01.png" class="paywin"></p>
+               </label>
+          </div>
+          <div class="btBox"> <a href="javascript:;">确定转入</a> </div>
+          <div class="remarks">
+            <p class="roll-out-tips">温馨提示：
+                <br>1、单人单笔最低可转入0.1元，建议转入100元及以上（零钱包余额保持100元及以上，利率每周上涨0.5%，最高至13.8%);
+                <br>2、本平台所有收益均为一分钱起结算，低于一分钱收益平台不作记录。
+            </p>
+          </div>
+          <div class="remarks">
+               <p><a href="javascript:;" id="js-bankInfo">(个人)快捷类转入支持银行限额表</a></p>
+          </div>
+          <div class="bank-info" style="display:none;">
+            <ul class="loan-list-hd row">
+                <li><a href="#"> 银行</a></li>
+                <li><a href="#"> 单笔限额</a></li>
+                <li><a href="#"> 单日限额</a></li>
+            </ul>
+               <div class="loan-list-bd">
+                    <dl class="loan-list">
+                         <dd class="loan-item row bgsty-g"><span>工商银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>建设银行</span><span>10万</span><span >50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>中国银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>光大银行</span><span>10万</span><span >50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>农业银行</span><span>10万</span><span >50万</span></dd>
+                         <dd class="loan-item row"><span>兴业银行</span><span>5万</span><span>50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>邮储银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>民生银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>平安银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>中信银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>广发银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>浦发银行</span><span>5万</span><span>5万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>交通银行</span><span>10万</span><span>50万</span></dd>
+                         <dd class="loan-item row"><span>华夏银行</span><span>5万</span><span>50万</span></dd>
+                         <dd class="loan-item row bgsty-g"><span>招商银行</span><span>10万</span><span>50万</span></dd>
+                    </dl>
+               </div>
+       </div>
+     </ul>
+     <ul class="recharge_ul">
+          <div class="contentListBox fontColor2 borderTop">
+                <label class="lbBox">
+               <h3 class="lineBlock">零钱包余额</h3>
+               <p class="lineBlock">14.56元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">账户余额</h3>
+               <p class="lineBlock">9999.56元</p>
+               </label>     
+               <label class="lbBox">
+                   <h3 class="lineBlock">转入金额</h3>
+                   <p class="lineBlock">
+                   <input class="lineBlock" type="text" placeholder="请输入转入金额">元</p>
+               </label>
+               <label class="lbBox">
+               <h3 class="lineBlock">还可转入金额</h3>
+               <p class="lineBlock">9999.56元</p>
+               </label>   
+               <label class="lbBox">
+               <h3 class="lineBlock">收益发放日期</h3>
+               <a class="lineBlock yields" href="javascript:;" id="js-yields"><span class="sigh-icon"></span><i class="date lineBlock">2015-12-02</i></a>
+               </label>  
+          </div>
+          <div class="btBox"> <a href="javascript:;">确定转入</a> </div>
+          <div class="remarks">
+               <p class="roll-out-tips">温馨提示：
+<br>1、单人单笔最低可转入0.1元，建议转入100元及以上（零钱包余额保持100元及以上，利率每周上涨0.5%，最高至13.8%);
+<br>2、本平台所有收益均为一分钱起结算，低于一分钱收益平台不作记录。</p>
+          </div>
+     </ul>
+</section>
+<div class="Jdialog" id="Jdialog">
+     <div class="lineBlock Jdialog_box">
+          <div class="Jdialog_content">
+               <h3></h3>
+          </div>
+          <div class="lbBox Jdialog_submit"> <a class="lineBlock" href="javascript:;">确定</a></div>
+     </div>
+     <b class="lineBlock"></b>
+</div>
+<!--提示层-->
+<div class="Jdialog ys"><div class="lineBlock Jtip"><p></p></div><b class="lineBlock"></b></div>
+
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#recharge").children("a").click(function(){
+        $(this).addClass("active").siblings("a").removeClass("active");
+        var index = $(this).index();
+        $(".recharge_ul").removeClass("show").eq(index).addClass("show");
+    })
+
+	$('#js-bankInfo').click(function(){
+		$(".bank-info").fadeToggle();
+	});//银行限额列表
+		
+	$('#js-yields').click(function(){
+        $(".Jdialog.ys").Jtip("23:59前投资(以支付成功时间为准),第三天收益到账。",2200);
+	});//收益提示
+   $("#Jdialog").Jdialog({
+        state: 'close',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '交易密码被锁定120分钟',
+        cancel: function(){}, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+
+
+	
+})
+
+</script>
+</html>

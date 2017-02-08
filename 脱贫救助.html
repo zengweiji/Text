@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>脱贫宝</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/loan.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+<div class="ld-body hasfixPanel"> 
+     <!--头部-->
+     <header class="ld-header">
+         <span class="left-ctl">
+             <a href="javascript:history.go(-1);" class="goback"></a>
+             <a class="btn-txt lineBlock close-btn" href="#">关闭</a>
+         </span>
+         <span class="lbBox btn-ctl">
+             <a href="#" class="btn-txt lineBlock">分享</a>
+             <var>|</var>
+             <a href="#" class="btn-txt lineBlock">添加</a>
+         </span>
+         <span>脱贫宝</span>
+     </header>
+     
+     <div class="tpb-intro-banner"><img src="images/rescue-banner.png" width="640" height="254" ></div>
+     <div class="intro-item rescue">
+          <h2 class="item-tit"><i class="titico lineBlock"></i><span class="lineBlock tit-txt">救助计划介绍</span></h2>
+          <p class="item-cont">脱贫宝脱贫救助一期计划向全国广大农村地区寻找1万户贫困家庭每户家庭发放500元，有意申请脱贫宝500元脱贫救助资金的贫困困难家庭，可以由一名家庭成员注册脱贫宝提交申请脱贫救助款，如申请救助的家庭没人会使用脱贫宝网站或脱贫宝触屏版申请，也可通过脱贫宝全国服务热线400-035-8888电话选择脱贫宝服务专线申请咨询或者发脱贫宝脱贫救助申请到脱贫宝脱贫救助计划专属邮箱tbp@hkd58.com，也可找隔壁邻居或亲人代为申请，脱贫宝服务团队收到申请后会及时与当事人及家庭等取得联系并通过多渠道或实地走访等方式确认贫困困难情况，如果属实审核通过的即确定为脱贫宝脱贫救助计划的受助贫困家庭，即日起将从脱贫宝分5个月每月100元共计500元发放到受助贫困家庭指定的脱贫宝账户，救助款发放到对应脱贫宝账户后可随时提现到银行卡，12小时到账。</p>
+     </div>
+     <div class="intro-item">
+          <h2 class="item-tit"><i class="titico lineBlock"></i><span class="lineBlock tit-txt">借款流程</span></h2>
+          <ul class="loan-process lbBox">
+               <li class="lineBlock"><span class="sq-ico lineBlock"></span><i>在线申请</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="sh-ico lineBlock"></span><i>资质审核</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="fk-ico lineBlock"></span><i>在线放款</i></li>               
+          </ul>
+     </div>     <div class="intro-item rescue">
+          <h2 class="item-tit"><i class="titico lineBlock"></i><span class="lineBlock tit-txt">放款流程</span></h2>
+          <ul class="loan-process lbBox">
+               <li class="lineBlock"><span class="nstep lineBlock">1</span><i>第一次放款</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="nstep lineBlock">2</span><i>第二次放款</i></li>
+               <li class="diving-line lineBlock"></li>
+               
+               <li class="lineBlock"><span class="nstep lineBlock">3</span><i>第三次放款</i></li>
+               <li class="lineBlock"><span class="nstep lineBlock">4</span><i>第四次放款</i></li>
+               <li class="diving-line lineBlock"></li>
+               <li class="lineBlock"><span class="nstep lineBlock">5</span><i>第五次放款</i></li>
+          </ul>
+     </div>
+     <div class="intro-item rescue">
+          <h2 class="item-tit"><i class="titico lineBlock"></i><span class="lineBlock tit-txt">附件下载</span></h2>
+          <ul class="attachments">
+               <li><span class="att-tit">脱贫救助申请表附件下载.doc</span><a href="#" class="s-btn">下载</a></li>
+          </ul>
+     </div>
+</div>
+<div class="m-wrap fixb"><a href="javascript:;" id="payNow" class="m-btn">立即申请借款</a></div>
+<footer>
+        <div class="account-nav">
+            <ul>
+                <li class="footNav1 cur"><a href="#"><i></i><span>救助介绍</span></a></li>
+                <li class="footNav2"><a href="#"><i></i><span>申请进度</span></a></li>
+                <li class="footNav3"><a href="#"><i></i><span>救助名单</span></a></li>
+            </ul>
+        </div>
+</footer>
+
+
+
+    <!-- 弹出框 -->
+    <div class="Jdialog" id="Jdialog">
+        <div class="lineBlock Jdialog_box">
+            <div class="Jdialog_content">
+                <h3></h3>
+             
+            </div>
+            <div class="lbBox Jdialog_submit">
+                <a class="lineBlock" href="javascript:;">确定</a>
+            </div>
+        </div>
+        <b class="lineBlock"></b>
+    </div>
+
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#recharge").children("a").click(function(){
+        $(this).addClass("active").siblings("a").removeClass("active");
+        var index = $(this).index();
+        $(".recharge_ul").removeClass("show").eq(index).addClass("show");
+    })
+
+    $("#Jdialog").Jdialog({
+        state: 'close',  //状态，打开open，关闭close，可不填，默认'open'
+        title: '您已成功申请脱贫救助，不可再次申请!', //标题文字，可不填，默认页面里的
+        submit: '确定', //按钮文字，逗号隔开，最多两个，可不填，默认html里的
+        cancel: function(){ $("#Jdialog").Jdialog({state:'close'}) }, //第一个按钮点击功能,可不填
+        success: function(){} //第二个按钮点击功能,可不填
+    });
+})
+</script>
+</html>

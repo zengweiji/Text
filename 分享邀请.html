@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>我的二维码</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/myaccount.css" rel="stylesheet" type="text/css">
+    <script src="js/Header.js"></script>
+<script src="js/public.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+       <header class="ld-header"><span class="left-ctl">
+             <a class="btn-txt lineBlock close-btn" href="#">关闭</a>
+         </span> 
+         <span class="lbBox btn-ctl">
+             <a href="#" class="btn-txt lineBlock js-right-btn">分享</a>
+         </span><span>我的二维码</span> 
+     </header>
+	<div class="qr-code-wrap">
+    	<div class="top-tips">保存我的分享二维码，新用户扫描此二维码即可进入加盟注册页面，成功加盟的用户自动成为我的感恩惠粉。</div>
+        <div class="qr-box">
+        	<div class="inner">
+                <div class="user">
+                    <div class="user-img"><img src="#"/></div>
+                    <div class="text">
+                        <p>白*</p>
+                        <p>159****6882</p>
+                    </div>
+                    
+                </div>
+                <div class="qr-pic">
+                    <img src="images/my-qr.jpg"/>
+                </div>
+                <p class="bd-tips">长按保存图片，扫描二维码就可以加盟哦！</p>
+            </div>
+        </div>
+    </div>
+	<section>
+		<!--分享-->
+		<div class="share-list-wrap">
+			<div class="share-list-overlay"></div>
+			<div class="share-list">
+        <div class="bdsharebuttonbox lbBox">
+            <a class="bds_wxhy lineBlock" href="#"></a>
+            <a class="bds_wxpy lineBlock" href="#"></a>
+            <a class="bds_tsina lineBlock" href="#"></a>
+            <a class="bds_sqq lineBlock" href="#"></a>
+            <a class="bds_qzone lineBlock" href="#"></a>
+        </div>
+        <div class="simple-btns">
+            <a class="simple-btn cancel" href="javascript:void(0)">取消</a>
+        </div>
+    </div>
+		</div>
+		
+		<!--长按保存图片-->
+		<!--<div class="save-pic-wrap" >
+			<div class="save-pic-overlay"></div>
+			<div class="save-pic">
+				<div class="simple-btns">
+					<a class="simple-btn cancel" href="#">保存到手机</a>
+ 				</div>
+				<div class="simple-btns">
+					<a class="simple-btn cancel" href="#">取消</a>
+ 				</div>
+			</div>
+		</div>-->
+
+	</section>
+	<script>
+	$(function(){
+		
+		/*分享显隐*/
+		$('.js-right-btn').click(function(){
+			$('.share-list-wrap').show();
+			
+		});
+		$('.share-list-overlay,.share-list .cancel').click(function(){
+			
+			$('.share-list-wrap').hide()			
+			
+		});
+		
+	})
+	</script>
+</body>
+</html>

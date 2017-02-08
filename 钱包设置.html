@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>钱包设置</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/investAssign.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/Header.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body style="background-color:#f6f7f2;">
+    <!--头部-->
+    <header class="ld-header">
+        <a href="javascript:history.go(-1);" class="left-ctl goback"></a>
+        <span>钱包设置</span>
+    </header>
+    <section>
+        <div class="purse-set">
+            <div class="ps-libox">
+                <div class="psl-li">
+                    <div class="lbBox psll-tbox">
+                        <img class="lineBlock psllt-img" src="images/purseSet_01.png" alt=""/>
+                        <p class="lineBlock psllt-t">账户余额自动转入</p>
+                        <div class="psllt-switch" id="purseSwitch"><i></i></div>
+                    </div>
+                </div>
+                <div class="psl-li" id="purseSwitchText" style="display:none;">
+                    <div class="lbBox psll-tbox">
+                        <img class="lineBlock psllt-img" src="images/purseSet_02.png" alt=""/>
+                        <p class="lineBlock psllt-t">账户余额保留金额</p>
+                        <div class="lbBox psllt-right">
+                            <input class="lineBlock pslltr-t1" type="text" placeholder="0"/>
+                            <p class="lineBlock pslltr-t2">元</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ps-down" id="purseSwitchBt" style="display:none;">
+                <p class="psd-t">超出<span>0</span>元的金额将于每日凌晨0点转入零钱包</p>
+                <button class="psd-bt">确定</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+$(function(){
+    $("#purseSwitch").click(function(){
+        if (!$(this).hasClass("open")) {
+            $(this).addClass("open");
+            $("#purseSwitchText, #purseSwitchBt").show();
+        }else{
+            $(this).removeClass("open");
+            $("#purseSwitchText, #purseSwitchBt").hide();
+        }
+    });
+})
+</script>
+</html>
